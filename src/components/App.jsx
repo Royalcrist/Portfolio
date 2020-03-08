@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Cibus from './pages/Cibus';
+import '../../assets/styles/App.scss'
 
 
 class App extends React.Component {

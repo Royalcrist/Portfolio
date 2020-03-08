@@ -1,0 +1,36 @@
+.indicator {
+    margin: 0;
+    padding: 0;
+    top: 65vh;
+    right: 7.5%;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.i-unselected {
+    margin-bottom: .5em;
+    height: .5em;
+    width: .5em;
+    border: 2.5px solid black;
+    border-radius: 50%;
+}
+
+.i-selected {
+    height: .75em;
+    width: .75em;
+    padding: .5em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 10pt;
+    position: relative;
+    top: -5.25em;
+}
