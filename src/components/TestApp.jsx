@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Indicator from '../components/Indicator'
-import useIndicator from '../useIndicator'
 import '../../assets/styles/TestApp.scss'
 
 const TestApp = (props) => {
