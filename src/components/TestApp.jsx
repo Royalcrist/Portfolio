@@ -1,36 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Indicator from '../components/Indicator'
+import useIndicator from '../useIndicator'
 import '../../assets/styles/TestApp.scss'
 
 const TestApp = (props) => {
-    const [ scrollInfo, setScrollInfo ] = useState(0);
-
-    function handleScroll(e) {
-        let counter = setScrollInfo(useIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
-
-        function useIndicator(scrollValue) {
-            let value = 1;
-    
-            if (scrollValue === 0) {
-                value = 1;
-            }
-            else if (scrollValue >= 33 && scrollValue < 66) {
-                value = 2;
-            }
-            else if (scrollValue >= 66) {
-                value = 3;
-            }
-    
-            return value;
-        }
-    }
-
+    const scrollInfo = useIndicator;
     console.log(scrollInfo)
 
 
 
     return (
-        <div className="container" onScroll={handleScroll}>
+        <div className="container" onScroll={useIndicator}>
             < Indicator index={ scrollInfo } />
             <section className="child green">
                 <h3>Hello</h3>

@@ -1,8 +1,9 @@
-export default function useIndicator(e) {
-    const [scrollInfo, setScrollInfo] = useState(1);
-    return setScrollInfo(handleIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
-    function handleIndicator(scrollValue) {
+export default function handleScroll(e) {
+    return setScrollInfo(useIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
+
+    function useIndicator(scrollValue) {
         let value = 1;
+
         if (scrollValue === 0) {
             value = 1;
         }
@@ -12,6 +13,7 @@ export default function useIndicator(e) {
         else if (scrollValue >= 66) {
             value = 3;
         }
+
         return value;
     }
 }

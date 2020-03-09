@@ -5,17 +5,15 @@ import Cibus from './pages/Cibus';
 import '../../assets/styles/App.scss'
 
 
-class App extends React.Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={HomePage} />
-                    <Route path="/cibus" component={Cibus} />
-                </Switch>
-            </BrowserRouter>
-        );
-    }
+const App = (props) => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/cibus" component={Cibus} />
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomeMe from './containers/HomeMe';
+import HomeProjects from './containers/HomeProjects';
+import HomeContacts from './containers/HomeContact';
 
 
 const Header = () => {
