@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 export default function useIndicator(initialValue) {
     const [ value, setValue] = useState(initialValue);
+    const previous = usePreviousValue(value);
+
+    function usePreviousValue (value) {
+        const ref = useRef(1);
+
+        useEffect(() => {
+            ref.current = value;
+        });
+
+        return ref.current;
+
+    }
 
     function handleScroll(e) {
-        return setValue(useIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
+        setValue(useIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
     
         function useIndicator(scrollValue) {
             let indexValue = 1;
@@ -25,6 +37,7 @@ export default function useIndicator(initialValue) {
 
     return {
         value,
+        previous,
         onScroll: handleScroll
     }
 }

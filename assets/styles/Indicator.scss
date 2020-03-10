@@ -8,10 +8,11 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    height: 100%;
 }
 
 .i-unselected {
-    margin-bottom: .5em;
+    margin-bottom: .75em;
     height: .5em;
     width: .5em;
     border: 2.5px solid black;
@@ -32,5 +33,21 @@
     justify-content: center;
     font-size: 10pt;
     position: relative;
-    top: -5.25em;
+    top: -11.5%;
+}
+
+.scroll-1_UP {
+    top: -11.5%;
+}
+
+.scroll-2_UP {
+    top: -7.5%;
+}
+
+.scroll-2_DOWN {
+    top: -7.5%;
+}
+
+.scroll-3_DOWN {
+    top: -3.5%;
 }
