@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap');
 
+:root {
+    // Text sizes
+    --p-options-size: 18px;
+    --p-size: 20px;
+    --subtitle-size: 35px;
+    --title-size: 50px;
+
+    // colors
+    --text-primary: black;
+    --text-secundry: #5F5F5F;
+    --background: white;
+    --accent-blue: #009DE3;
+    --accent-orange: #FF9438;
+    --accent-yellow: #FFBB00;
+    --grandient-blue: linear-gradient(-135deg, #00FFCC, #1F77FF);
+    --gradient-orange: linear-gradient(-135deg, #FF9438, #FF4400);
+    --gradient-yelow: linear-gradient(-135deg, #FFBB00, #FF8800);
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }

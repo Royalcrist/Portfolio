@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    color: white;
     overflow: auto;
 }
 
@@ -31,15 +30,15 @@ body {
     width: 100%;
     grid-column: 1 / 15;
 
-    &:nth-child(2) {
+    &:nth-child(1) {
         z-index: 1;
         grid-row: 1;
     }
-    &:nth-child(3) {
+    &:nth-child(2) {
         z-index: 1;
         grid-row: 2;
     }
-    &:nth-child(4) {
+    &:nth-child(3) {
         z-index: 1;
         grid-row: 3;
     }
@@ -50,14 +49,23 @@ h3 {
     padding-left: 50px;
 }
 
+.home-img {
+    grid-column: 1 / auto;
+}
+
+.profile-pic {
+    height: auto;
+    max-width: 20vw;
+}
+
 .red {
-    background-color: red;
+    background-color: var(--background);
 }
 
 .green {
-    background-color: seagreen;
+    background-color: var(--background);
 }
 
 .blue {
-    background-color: steelblue;
+    background-color: var(--background);
 }

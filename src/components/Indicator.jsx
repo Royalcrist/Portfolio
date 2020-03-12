@@ -18,7 +18,7 @@ const Indicator = (props) => {
             <div className="i-unselected"></div>
             <div className="i-unselected"></div>
             <div className="i-unselected"></div>
-            <div className={`i-selected scroll-${props.index}_${scrollDirection(props.index, props.previousIndex)} `}>{ props.index }</div>
+            <div className={`i-selected scroll-${props.index}_${scrollDirection(props.index, props.previousIndex)}`}>{ props.index }</div>
         </div>
     );
 }
