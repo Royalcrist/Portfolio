@@ -3,45 +3,108 @@ body {
     overflow: auto;
 }
 
-.container {
+h1 {
+    font-size: var(--title-size);
+}
+
+.page {
     margin: 0;
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-padding: 0;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(14, 1fr);
-    grid-gap: 0 1em;
-
 }
 
-.container::-webkit-scrollbar {
+.page::-webkit-scrollbar {
     display: none;
   }
 
-.child {
+.container {
     scroll-snap-align: start;
     margin: 0;
     padding: 0;
-    padding-top: 10em;
-    height: calc(100vh - 10em);
+    padding-top: 8em;
+    height: calc(100vh - 8em);
     width: 100%;
-    grid-column: 1 / 15;
+    display: grid;
+    grid-template-rows: 1fr 61.33vh;
+    grid-template-columns: repeat(14, 1fr);
+    grid-gap: 0 1em;
+    background-color: var(--background);
+}
 
-    &:nth-child(1) {
-        z-index: 1;
-        grid-row: 1;
-    }
-    &:nth-child(2) {
-        z-index: 1;
-        grid-row: 2;
-    }
-    &:nth-child(3) {
-        z-index: 1;
-        grid-row: 3;
-    }
+.home-img {
+    grid-column: 1 / 6;
+    grid-row: 2;
+    margin-right: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.profile-pic {
+    position: absolute;
+    bottom: 0;
+    max-height: auto;
+    width: 100%;
+    max-width: 410px;
+    min-width: 290px;
+    z-index: 2;
+}
+
+.projects-pic {
+    position: absolute;
+    bottom: 25%;
+    max-height: auto;
+    width: 100%;
+    max-width: 410px;
+    min-width: 290px;
+    z-index: 2;
+}
+
+.info {
+    margin-left: 30px;
+    grid-column: 6 / 12;
+    grid-row: 2;
+    position: relative;
+}
+
+.info .hello {
+    position: absolute;
+    top: -2.5em;
+    font-size: 40px;
+}
+
+.info .title {
+    position: absolute;
+    top: -1.3em;
+}
+
+.info span {
+    position: absolute;
+    top: 2.5em;
+    color: var(--text-secundary);
+    max-width: 400px;
+}
+
+.info-btn {
+    position: absolute;
+    top: 8.5em;
+    color: white;
+    font-size: var(--p-options-size);
+    text-decoration: none;
+    margin-top: 25px;
+    padding: .6em 1.4em;
+    border-radius: 50px;
+}
+
+.profile-btn {
+    background-image: var(--gradient-blue);
+}
+
+.project-btn {
+    top: 7.5em;
+    background-image: var(--gradient-orange);
 }
 
 h3 {
@@ -49,23 +112,14 @@ h3 {
     padding-left: 50px;
 }
 
-.home-img {
-    grid-column: 1 / auto;
-}
-
-.profile-pic {
-    height: auto;
-    max-width: 20vw;
-}
-
-.red {
-    background-color: var(--background);
-}
-
-.green {
-    background-color: var(--background);
-}
-
-.blue {
-    background-color: var(--background);
+.scroll {
+    position: fixed;
+    bottom: 30px;
+    left: calc(50vw - 5em);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-items: center;
+    font-size: var(--icon-size);
+    font-weight: 700;
 }

@@ -7,7 +7,7 @@ import HeaderSVG from './HeaderSVG'
 import '../../assets/styles/Header.scss'
 
 
-const Header = () => {
+const Header = (props) => {
     const langBtn = useStatus()
 
 
@@ -36,9 +36,9 @@ const Header = () => {
                 
 
                 <div className="navbar-i-group">
-                    <Link to="/" className="navbar-i">Home</Link>
-                    <Link to="/" className="navbar-i">Projects</Link>
-                    <Link to="/" className="navbar-i">Contact</Link>
+                    <Link to="/" className={`navbar-i home-${props.index}`}>Home</Link>
+                    <Link to="/" className={`navbar-i projects-${props.index}`}>Projects</Link>
+                    <Link to="/" className={`navbar-i contact-${props.index}`}>Contact</Link>
                 </div>
                 
                 <div className="lang">

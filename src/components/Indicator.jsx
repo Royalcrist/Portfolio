@@ -15,10 +15,12 @@ const Indicator = (props) => {
 
     return (
         <div className="indicator">
-            <div className="i-unselected"></div>
-            <div className="i-unselected"></div>
-            <div className="i-unselected"></div>
-            <div className={`i-selected scroll-${props.index}_${scrollDirection(props.index, props.previousIndex)}`}>{ props.index }</div>
+            <div className="i-container">
+                <div className="i-unselected"></div>
+                <div className="i-unselected"></div>
+                <div className="i-unselected"></div>
+                <div className={`i-selected scroll-${props.index}_${scrollDirection(props.index, props.previousIndex)}`}>{ props.index }</div>
+            </div>
         </div>
     );
 }
