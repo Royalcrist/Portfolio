@@ -62,38 +62,54 @@ h1 {
     z-index: 2;
 }
 
-.info {
+.info-container {
     margin-left: 30px;
     grid-column: 6 / 12;
     grid-row: 2;
     position: relative;
 }
 
-.info .hello {
+.info {
     position: absolute;
-    top: -2.5em;
+    top: -3.2em;
+}
+
+.info .hello {
     font-size: 40px;
+    margin: 0;
+    padding: 0;
 }
 
 .info .title {
-    position: absolute;
-    top: -1.3em;
+    padding: 0;
+    margin: 0 0 .5em 0;
 }
 
 .info span {
-    position: absolute;
-    top: 2.5em;
+    display: inline-block;
     color: var(--text-secundary);
-    max-width: 400px;
+    max-width: 450px;
+    margin-bottom: 3em;
+}
+
+.contact-container {
+    margin-bottom: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.contact {
+    text-decoration: none;
+    color: var(--text-secundary);
+    display: inline-block;
 }
 
 .info-btn {
-    position: absolute;
-    top: 8.5em;
+    display: inline-block;
     color: white;
     font-size: var(--p-options-size);
     text-decoration: none;
-    margin-top: 25px;
     padding: .6em 1.4em;
     border-radius: 50px;
 }
@@ -103,7 +119,6 @@ h1 {
 }
 
 .project-btn {
-    top: 7.5em;
     background-image: var(--gradient-orange);
 }
 
