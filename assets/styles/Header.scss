@@ -27,11 +27,22 @@
 
 .logo-dot {
     display: inline-block;
-    background-image: var(--gradient-blue);
     border-radius: 50%;
     height: 1vh;
     width: 1vh;
     margin-top: 0.5em;
+}
+
+.dot-1{
+    background-image: var(--gradient-blue);
+}
+
+.dot-2{
+    background-image: var(--gradient-orange);
+}
+
+.dot-3{
+    background-image: var(--gradient-yellow);
 }
 
 .navbar-i-group {

@@ -1,3 +1,18 @@
+.media {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 6%;
+}
+
 .media-btn {
-    display: none;
+    height: auto;
+    width: 48px;
+    margin-left: 10px;
+}
+
+.media-btn svg:hover > * {
+    opacity: .5;
 }

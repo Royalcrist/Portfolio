@@ -55,7 +55,12 @@ const HomePage = () => {
             </section>
 
             <section className="container">
-                <h3>Hello</h3>
+            <div className="info">
+                    <h1 className="title">CIBUS</h1>
+                    <span>
+                        cristiansuarezg7@gmail.com<br/>+34 645 40 31 64
+                    </span>
+                </div>
             </section>
         </div>
     );
