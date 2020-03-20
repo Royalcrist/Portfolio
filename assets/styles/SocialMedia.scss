@@ -16,3 +16,13 @@
 .media-btn svg:hover > * {
     opacity: .5;
 }
+
+.media-contact {
+    bottom: 30%;
+    right: calc(50% - 58px);
+    z-index: 3;
+}
+
+.media-btn-3 {
+    margin-left: 20px;
+}

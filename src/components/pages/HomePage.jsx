@@ -22,9 +22,9 @@ const HomePage = () => {
     return (
         <div className="page" onScroll={ scrollInfo.onScroll }>
             < Header index={ scrollInfo.value }/>
-            < SocialMedia/>
+            < SocialMedia index={ scrollInfo.value }/>
             < Indicator index={ scrollInfo.value } previousIndex={ scrollInfo.previous }/>
-            <div className="scroll">
+            <div className={`scroll ${ scrollInfo.value === 3 ? 'scroll-hide' : '' }`}>
                 < ScrollIcon />
                 <span>Scroll to<br/>Discover</span>
             </div>
@@ -64,7 +64,7 @@ const HomePage = () => {
             <section className="container">
                 <div className="info-container">
                     <div className="info">
-                        <h1 className="title">CIBUS</h1>
+                        <h1 className="title">GET IN TOUCH</h1>
                         <div className="contact-container">
                             < EmailIcon />
                             <a className="contact" href={`mailto:${email}`} >{ email }</a><br/>
