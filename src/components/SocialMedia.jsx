@@ -18,13 +18,13 @@ const SocialMedia = () => {
                 </svg>
             </a>
             <a href="/" className="media-btn">
-                <svg id="Component_4_1" data-name="Component 4 – 1" viewBox="0 0 80 80">
+                <svg id="Component_4_1" data-name="Component 4 – 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
                     <defs>
-                        <clipPath id="clip-path">
+                        <clipPath id="clip-path-git">
                         <rect id="Rectangle_168" data-name="Rectangle 168" width="80" height="80" rx="23" transform="translate(1658 969)" fill="#dfdfdf"/>
                         </clipPath>
                     </defs>
-                    <g id="Rectangle_572" data-name="Rectangle 572" fill="none" stroke="#000" strokeWidth="4" opacity="0.3">
+                    <g id="Rectangle_572" data-name="Rectangle 572" fill="none" stroke="#000" stroke-width="4" opacity="0.3">
                         <rect width="80" height="80" rx="23" stroke="none"/>
                         <rect x="2" y="2" width="76" height="76" rx="21" fill="none"/>
                     </g>
