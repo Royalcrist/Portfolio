@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderSVG from './HeaderSVG'
 import '../../assets/styles/Header.scss'
@@ -6,6 +6,26 @@ import '../../assets/styles/Header.scss'
 
 const Header = (props) => {
     const langBtn = useStatus()
+    const [show, setShow] = useState(null);
+
+    useEffect(() => {
+        if (!props.hideNavigation) {
+            setShow (
+                <React.Fragment>
+                    <div className="logo">
+                        <span>Cristian</span>
+                        <div className={`logo-dot dot-${props.index}`}></div>
+                    </div>
+                    
+                    <div className="navbar-i-group">
+                        <a href="#me" className={`navbar-i home-${props.index}`}>Home</a>
+                        <a href="#projects" className={`navbar-i projects-${props.index}`}>Projects</a>
+                        <a href="#contact" className={`navbar-i contact-${props.index}`}>Contact</a>
+                    </div>
+                </React.Fragment>
+            );
+        }
+    },[props.hideNavigation, props.index])
 
 
     function useStatus (value) {
@@ -23,16 +43,7 @@ const Header = (props) => {
 
     return (
         <nav className="navbar">
-            <div className="logo">
-                <span>Cristian</span>
-                <div className={`logo-dot dot-${props.index}`}></div>
-            </div>
-
-            <div className="navbar-i-group">
-                <Link to="/" className={`navbar-i home-${props.index}`}>Home</Link>
-                <Link to="/" className={`navbar-i projects-${props.index}`}>Projects</Link>
-                <Link to="/" className={`navbar-i contact-${props.index}`}>Contact</Link>
-            </div>
+            { show }
             
             <div className="lang">
                 <button className="lang-btn" onClick={ langBtn.handleStatus }>En</button>

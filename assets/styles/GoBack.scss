@@ -1,0 +1,19 @@
+.go-back {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-size: var(--icon-size);
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: .18em;
+    color: var(--text-primary);
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.go-back-icon {
+    height: auto;
+    width: 100%;
+    max-width: 2em;
+    margin-right: .6em;
+}

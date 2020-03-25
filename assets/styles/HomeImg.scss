@@ -1,0 +1,17 @@
+.home-img {
+    grid-column: 1 / 7;
+    grid-row: 2;
+    margin-right: 70px;
+    display: inline-block;
+    position: relative;
+}
+
+.profile-pic {
+    position: absolute;
+    bottom: 0;
+    max-height: auto;
+    width: 100%;
+    max-width: 450px;
+    min-width: 290px;
+    z-index: 2;
+}

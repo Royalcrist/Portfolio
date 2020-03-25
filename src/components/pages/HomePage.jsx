@@ -2,15 +2,15 @@ import React, { useRef } from 'react';
 import Header from '../Header';
 import SocialMedia from '../SocialMedia';
 import Indicator from '../Indicator'
-import HomeSVG from '../HomeSVG'
 import useIndicator from '../../useIndicator'
 import '../../../assets/styles/pages/HomePage.scss'
-import ProfilePic from '../../../assets/static/ProfilePic.png'
 import CibusPic from '../../../assets/static/CibusPic.png'
 import { Link } from 'react-router-dom';
 import ScrollIcon from '../../ScrollIcon';
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
+import HomeImg from '../../HomeImg';
+import Profile from './Profile';
 
 
 const HomePage = () => {
@@ -21,19 +21,13 @@ const HomePage = () => {
 
     return (
         <div className="page" onScroll={ scrollInfo.onScroll }>
-            < Header index={ scrollInfo.value }/>
+            < Header index={ scrollInfo.value } hideNavigation={false}/>
             < SocialMedia index={ scrollInfo.value }/>
             < Indicator index={ scrollInfo.value } previousIndex={ scrollInfo.previous }/>
-            <div className={`scroll ${ scrollInfo.value === 3 ? 'scroll-hide' : '' }`}>
-                < ScrollIcon />
-                <span>Scroll to<br/>Discover</span>
-            </div>
+            < ScrollIcon index= { scrollInfo.value } />
 
-            <section className="container">
-                <div className="home-img">
-                    < HomeSVG />
-                    <img className="profile-pic" src={ProfilePic} alt="My profile pic :)"/>
-                </div>
+            <section id="me" className="grid container">
+                < HomeImg />
                 <div className="info-container">
                     <div className="info">
                         <h2 className="hello">HELLO!</h2>
@@ -46,7 +40,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="container">
+            <section id="projects" className="grid container">
                 <div className="home-img">
                     <img className="projects-pic" src={CibusPic} alt="My profile pic :)"/>
                 </div>
@@ -56,12 +50,12 @@ const HomePage = () => {
                         <span>
                             The Point of Sale System that you don't have to learn.
                         </span><br/>
-                        < Link to="/projects" className="info-btn project-btn">View case</Link>
+                        < Link to="/cibus" className="info-btn project-btn">View case</Link>
                     </div>
                 </div>
             </section>
 
-            <section className="container">
+            <section id="contact" className="grid container">
                 <div className="info-container">
                     <div className="info">
                         <h1 className="title">GET IN TOUCH</h1>

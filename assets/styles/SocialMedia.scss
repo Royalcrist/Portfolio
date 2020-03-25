@@ -10,7 +10,7 @@
 .media-btn {
     height: auto;
     width: 48px;
-    margin-left: 10px;
+    margin-left: 35px;
 }
 
 .media-btn svg:hover > * {
@@ -18,7 +18,7 @@
 }
 
 .media-contact {
-    bottom: 30%;
+    bottom: 30vh;
     right: calc(50% - 58px);
     z-index: 3;
 }

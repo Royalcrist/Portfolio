@@ -111,7 +111,7 @@
     background-color: white;
     color: black;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
+    font-size: var(--p-options-size);
     font-weight: 700;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     z-index: 2;
@@ -122,10 +122,11 @@
     top: 80px;
     right: 81.5px;
     color: black;
+    font-size: var(--p-options-size);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-decoration: none;
-    padding: .1em 1.3em;
+    padding: .4em 1.8em;
     border-radius: 0 0 1em 1em;
     background-color: white;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
