@@ -5,25 +5,20 @@ import HomeImg from '../../HomeImg';
 import GoBack from '../GoBack'
 import '../../../assets/styles/pages/Profile.scss'
 import Next from '../Next';
-import useIndicator from '../../useIndicator'
+import useScroll from '../../useScroll'
+import ageCalculator from '../../ageCalculator';
 
 
 const Profile = () => {
-    const scrollInfo = useIndicator(1);
+    const scrollInfo = useScroll(1);
     const [ scrollIcon, setScrollIcon ] = useState(null)
     const [ isVisible, setIsVisible ] = useState(true)
     const skills = ['JavaScript', 'Adobe XD', 'HTML']
-    
-    const age = (bDay, bMonth, bYear) => {
-        let year = new Date().getFullYear() - bYear;
-        let month = new Date().getMonth() - bMonth;
-        let day = new Date().getDate();
+    const age = ageCalculator(8, 9, 1999);
 
-        return (month < 0 || bDay > day) ? year - 1 : year;
-    }
 
     useEffect(() => {
-        if(scrollInfo.value !== 3) {
+        if (scrollInfo.value < 60){
             setScrollIcon(
                 <div className="scroll-bg-container">
                     < ScrollIcon index={1} className="scroll-bg"/>
@@ -45,7 +40,7 @@ const Profile = () => {
                 < HomeImg />
                 <div className="details" onScroll={scrollInfo.onScroll}>
                     <h1>CRISTIAN SUÁREZ</h1>
-                    <span> { age(8, 9, 1999) } years old</span><br/>
+                    <span> { age } years old</span><br/>
                     <span>Base in seville</span><br/>
                     <span>Fluency in </span>
                     <h2>Skills</h2>
