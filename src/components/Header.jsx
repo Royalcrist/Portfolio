@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderSVG from './HeaderSVG'
 import '../../assets/styles/Header.scss'
+import GoBack from './GoBack';
 
 
 const Header = (props) => {
@@ -25,7 +26,17 @@ const Header = (props) => {
                 </React.Fragment>
             );
         }
-    },[props.hideNavigation, props.index])
+        else if (props.showBack) {
+            setShow(
+                <React.Fragment>
+                    < GoBack className="go-back-header"/>
+                </React.Fragment>
+            );
+        }
+        else{
+            setShow(null)
+        }
+    },[props.hideNavigation, props.index, props.showBack])
 
 
     function useStatus (value) {

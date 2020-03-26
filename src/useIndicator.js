@@ -24,10 +24,10 @@ export default function useIndicator(initialValue) {
             if (scrollValue === 0) {
                 indexValue = 1;
             }
-            else if (scrollValue >= 33 && scrollValue < 66) {
+            else if (scrollValue >= 33 && scrollValue < 58) {
                 indexValue = 2;
             }
-            else if (scrollValue >= 66) {
+            else if (scrollValue >= 58) {
                 indexValue = 3;
             }
     

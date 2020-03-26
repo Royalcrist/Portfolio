@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/ScrollIcon.scss'
 
 const ScrollIcon = (props) => (
-    <div className={`scroll ${ props.index === 3 ? 'scroll-hide' : '' }`}>
+    <div className={`scroll ${ props.index === 3 ? 'scroll-hide' : '' } ${props.className}`}>
         <svg className="scroll-icon" viewBox="0 0 52 82.269">
             <g id="Scroll_Icon" data-name="Scroll Icon" transform="translate(-926.5 -924)">
                 <g id="Rectangle_161" data-name="Rectangle 161" transform="translate(926.5 924)" fill="none" stroke="#000" strokeWidth="4">

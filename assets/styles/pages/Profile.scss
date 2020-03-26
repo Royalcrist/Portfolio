@@ -2,8 +2,10 @@
     grid-column: 6 / 12;
     grid-row: 2;
     overflow-y: scroll;
-    margin-top: -30vh;
-    margin-bottom: 22vh;
+    margin-top: -34vh;
+    margin-left: 40px;
+    margin-bottom: 10vh;
+    scrollbar-width: none;
 }
 
 .details h1 {
@@ -11,6 +13,7 @@
 }
 
 .nav-btn {
+    margin-top: 140px;
     height: auto;
     width: 100%;
     max-width: 24em;
@@ -18,4 +21,13 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-gap: 1em;
+}
+
+.scroll-bg-container {
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, .8),rgba(255, 255, 255, .9), rgba(255, 255, 255, 1));
 }

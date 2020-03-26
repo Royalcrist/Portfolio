@@ -12,10 +12,6 @@ body {
     scroll-padding: 0;
 }
 
-.page::-webkit-scrollbar {
-    display: none;
-}
-
 .grid {
     display: grid;
     grid-template-rows: 1fr 61.33vh;

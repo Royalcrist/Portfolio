@@ -1,15 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header';
 import ScrollIcon from '../../ScrollIcon';
 import HomeImg from '../../HomeImg';
 import GoBack from '../GoBack'
 import '../../../assets/styles/pages/Profile.scss'
 import Next from '../Next';
+import useIndicator from '../../useIndicator'
 
 
 const Profile = () => {
+    const scrollInfo = useIndicator(1);
+    const [ scrollIcon, setScrollIcon ] = useState(null)
+    const [ isVisible, setIsVisible ] = useState(true)
     const skills = ['JavaScript', 'Adobe XD', 'HTML']
+    
     const age = (bDay, bMonth, bYear) => {
         let year = new Date().getFullYear() - bYear;
         let month = new Date().getMonth() - bMonth;
@@ -18,17 +22,28 @@ const Profile = () => {
         return (month < 0 || bDay > day) ? year - 1 : year;
     }
 
+    useEffect(() => {
+        if(scrollInfo.value !== 3) {
+            setScrollIcon(
+                <div className="scroll-bg-container">
+                    < ScrollIcon index={1} className="scroll-bg"/>
+                </div>
+            );
+            setIsVisible(true);
+        }
+        else {
+            setScrollIcon(null);
+            setIsVisible(false);
+        }
+    }, [scrollInfo.value]);
+
     return (
         <React.Fragment>
-            < Header index="1" hideNavigation={true}/>
-            < ScrollIcon index={3} />
-            <div  className="nav-btn">
-                < GoBack />
-                < Next />
-            </div>
+            < Header index="1" hideNavigation={ true } showBack={ isVisible }/>
+            { scrollIcon }
             <section className="grid container">
                 < HomeImg />
-                <div className="details">
+                <div className="details" onScroll={scrollInfo.onScroll}>
                     <h1>CRISTIAN SUÁREZ</h1>
                     <span> { age(8, 9, 1999) } years old</span><br/>
                     <span>Base in seville</span><br/>
@@ -48,6 +63,10 @@ const Profile = () => {
                         <br/>
                         In addition, the fact that someone has positively influenced one of the solutions I created motivates me to continue giving my best and never stop innovating.<br/>
                     </span>
+                    <div  className="nav-btn">
+                        < GoBack />
+                        < Next />
+                    </div>
                 </div>
             </section>
         </React.Fragment>

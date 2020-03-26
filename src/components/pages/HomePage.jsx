@@ -14,7 +14,6 @@ import Profile from './Profile';
 
 
 const HomePage = () => {
-    const refContainer = useRef(0);
     const scrollInfo = useIndicator(1);
     const email = "cristiansuarezg7@gmail.com";
     const number = "+34 645 40 31 64";
