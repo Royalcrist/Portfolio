@@ -118,6 +118,7 @@
 }
 
 .lang-link-show {
+    opacity: .85;
     position: absolute;
     top: 80px;
     right: 81.5px;
@@ -140,4 +141,10 @@
 
 .lang-link-hide {
     display: none;
+}
+
+.custom-orange {
+    background-image: var(--gradient-orange);
+    color: white;
+    box-shadow: 0 6px 8px rgba(255, 148, 56, 0.2);
 }

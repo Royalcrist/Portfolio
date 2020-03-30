@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import HeaderSVG from './HeaderSVG'
 import '../../assets/styles/Header.scss'
 import GoBack from './GoBack';
@@ -19,9 +20,9 @@ const Header = (props) => {
                     </div>
                     
                     <div className="navbar-i-group">
-                        <a href="#me" className={`navbar-i home-${props.index}`}>Home</a>
-                        <a href="#projects" className={`navbar-i projects-${props.index}`}>Projects</a>
-                        <a href="#contact" className={`navbar-i contact-${props.index}`}>Contact</a>
+                        <HashLink to="/#me" className={`navbar-i home-${props.index}`}>Home</HashLink>
+                        <HashLink to="/#projects" className={`navbar-i projects-${props.index}`}>Projects</HashLink>
+                        <HashLink to="/#contact" className={`navbar-i contact-${props.index}`}>Contact</HashLink>
                     </div>
                 </React.Fragment>
             );
@@ -57,8 +58,8 @@ const Header = (props) => {
             { show }
             
             <div className="lang">
-                <button className="lang-btn" onClick={ langBtn.handleStatus }>En</button>
-                <Link to="/es"  className={`lang-link-${langBtn.status}`}><span>Es</span></Link>
+                <button className={`lang-btn custom-${props.customColor ? props.customColor : ''}`} onClick={ langBtn.handleStatus }>En</button>
+                <Link to="/es"  className={`lang-link-${langBtn.status} custom-${props.customColor}`}><span>Es</span></Link>
                 < HeaderSVG index={props.index} />
             </div>
                     

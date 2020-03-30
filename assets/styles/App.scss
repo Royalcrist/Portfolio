@@ -22,7 +22,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
     font-size: 20px;
     line-height: 1.6;
     letter-spacing: 1px;
@@ -40,4 +40,5 @@ body {
 h1 {
     font-size: var(--title-size);
     line-height: 1.2;
+    font-weight: 700;
 }

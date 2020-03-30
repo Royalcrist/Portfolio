@@ -1,0 +1,12 @@
+.project-page {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.project-description {
+    grid-column: 3 / 13;
+    margin-top: 60px;
+    color: var(--text-secundary)
+}
