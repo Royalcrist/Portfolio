@@ -42,3 +42,14 @@ h1 {
     line-height: 1.2;
     font-weight: 700;
 }
+
+h2 {
+    font-size: var(--subtitle-size);
+    line-height: 1;
+}
+
+.grid-column {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-gap: 0 1em;
+}

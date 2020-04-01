@@ -1,0 +1,39 @@
+.project-features {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    justify-items: center;
+    align-items: center;
+    margin: 150px 0 150px;
+
+    &:last-child {
+        margin-bottom: 250px;
+    }
+}
+
+.feature-container {
+    margin-top: 70px;
+    margin-left: 40px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.feature-title {
+    display: inline-block;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-size: 7vh;
+    margin-bottom: 20px;
+}
+
+.feature-description {
+    color: var(--text-secundary);
+    font-size: 3.5vh;
+}
+
+.feature-img {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}

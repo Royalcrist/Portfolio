@@ -6,7 +6,52 @@
 }
 
 .project-description {
-    grid-column: 3 / 13;
-    margin-top: 60px;
+    grid-column: 4 / 12;
+    margin-bottom: 100px;
     color: var(--text-secundary)
+}
+
+.project-title {
+    display: inline-block;
+    margin:100px 0 40px;
+    grid-column: 4 / 12;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.project-subtitle {
+    display: inline-block;
+    margin:50px 0 40px;
+    grid-column: 4 / 12;
+    color: var(--text-primary);
+    text-transform: uppercase;
+
+}
+
+.project-img {
+    max-width: 100%;
+    grid-column: 2 / 14;
+    margin-bottom: 120px;
+}
+
+.project-problem {
+    background-size: 100vw 100px, 100vw calc(100% - 200px), 100vw 100px;
+    background-repeat: no-repeat;
+    background-position: center top, center center, center bottom;
+}
+
+.project-problem > * {
+    color: white;
+}
+
+.project-problem span > * {
+    color: white;
+}
+
+.project-title:first-child {
+    margin-top: 150px;
+}
+
+.project-description:last-child {
+    margin-bottom: 150px;
 }
