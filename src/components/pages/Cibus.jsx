@@ -8,6 +8,7 @@ import InfoArch from '../../../assets/static/InfoArchitecture.png';
 import Proto from '../../../assets/static/CibusProto.png';
 import AbTesting from '../../../assets/static/AbTesting.svg';
 import ProjectFeatures from '../ProjectFeatures';
+import ProjectColors from '../ProjectColors';
 
 const Cibus = () => {
     const cibusFeatures = [
@@ -34,6 +35,93 @@ const Cibus = () => {
             "img": "../../../assets/static/feature3.png",
             "alt": "More features image",
             "isReverse": false
+        }
+    ];
+    const cibusColors = [
+        {
+            "id": 1,
+            "color": "#B7815A",
+            "colorTitle": "Primary"
+        },
+        {
+            "id": 2,
+            "color": "#C3A482",
+            "colorTitle": "Primary Light"
+        },
+        {
+            "id": 3,
+            "color": "#FFFFFF",
+            "colorTitle": "Background / Text"
+        },
+        {
+            "id": 4,
+            "color": "#36332F",
+            "colorTitle": "Dark Background"
+        },
+        {
+            "id": 5,
+            "color": "#B7815A",
+            "colorTitle": "Navbar / Options"
+        },
+        {
+            "id": 6,
+            "color": "#211F1D",
+            "colorTitle": "Text bold / Focus"
+        },
+        {
+            "id": 7,
+            "color": "#E8E8E8",
+            "colorTitle": "Gray Background"
+        },
+        {
+            "id": 8,
+            "color": "#969696",
+            "colorTitle": "Paragraph / Disable items"
+        },
+        {
+            "id": 9,
+            "color": "#00C853",
+            "colorTitle": "On press green button"
+        },
+        {
+            "id": 10,
+            "color": "#43A047",
+            "colorTitle": "green button"
+        },
+        {
+            "id": 11,
+            "color": "#F44336",
+            "colorTitle": "On press red button"
+        },
+        {
+            "id": 12,
+            "color": "#D50000",
+            "colorTitle": "Red button"
+        },
+        {
+            "id": 13,
+            "color": "#E84545",
+            "colorTitle": "Accent color 1"
+        },
+        {
+            "id": 14,
+            "color": "#903749",
+            "colorTitle": "Accent color 2"
+        },
+        {
+            "id": 15,
+            "color": "#2980B9",
+            "colorTitle": "Accent color 3"
+        },
+        {
+            "id": 4,
+            "color": "#76BFAC",
+            "colorTitle": "Accent color 4"
+        },
+        {
+            "id": 4,
+            "color": "#F2BD14",
+            "colorTitle": "Accent color 5"
         }
     ];
 
@@ -182,6 +270,27 @@ const Cibus = () => {
                     I create the design inventory first, where I had all the guidelines of design, icons 
                     and components, to finally put the pieces together each display. 
                 </span>
+            </section>
+            <section className="grid-column">
+                <h1 className="project-title">Design Inventory</h1>
+
+                <h2 className="project-subtitle">Colors Palete</h2>
+                <span className="project-description">
+                    Finally after varios UX cycles, we got the definitive wireflow done and all the 
+                    low fidelity prototypes designed and tested, so it was time to give a little of 
+                    magic to Cibus. <br/><br/>
+
+                    I wanted Cibus to be modern and elegant, but with some color and fun at the same 
+                    time, so I decided to used an minimalistic a style like Material design 2 or crystal 
+                    design with some modifications. <br/><br/>
+
+                    The buttons, icons and menus had to be larger than a other touch systems to reduce 
+                    errors due the small 10 inches screens which the customers use. <br/><br/>
+
+                    I create the design inventory first, where I had all the guidelines of design, icons 
+                    and components, to finally put the pieces together each display. 
+                </span>
+                < ProjectColors colors={ cibusColors } />
             </section>
         </div>
     )
