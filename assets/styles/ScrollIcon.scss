@@ -15,7 +15,6 @@
     justify-items: center;
     font-size: var(--icon-size);
     font-weight: 700;
-    z-index: 3;
 }
 
 .scroll-hide {
@@ -26,4 +25,14 @@
     background-image: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .8), rgba(255, 255, 255, 0));
     padding: 1em;
     border-radius: 50px;
+}
+
+.scroll-bg-container {
+    z-index: 2;
+    height: 25%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, .3),rgba(255, 255, 255, .6), rgba(255, 255, 255, .8));
 }

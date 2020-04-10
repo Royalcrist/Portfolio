@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ScrollIcon from '../../ScrollIcon';
 import Header from '../Header';
 import ProjectPreview from '../ProjectPreview';
+import ProjectFeatures from '../ProjectFeatures';
+import ProjectColors from '../ProjectColors';
+import Next from '../Next';
+import GoBack from '../GoBack'
+import useScroll from '../../useScroll'
+
+
 import '../../../assets/styles/pages/Cibus.scss';
 import UxProcess from '../../../assets/static/UxProcess.png';
 import InfoArch from '../../../assets/static/InfoArchitecture.png';
 import Proto from '../../../assets/static/CibusProto.png';
 import AbTesting from '../../../assets/static/AbTesting.svg';
-import ProjectFeatures from '../ProjectFeatures';
-import ProjectColors from '../ProjectColors';
+import CibusFonts from '../../../assets/static/CibusFonts.svg';
+import CibusButtons from '../../../assets/static/CibusButtons.svg';
+import CibusInputs from '../../../assets/static/CibusInputs.svg';
+import CibusChecks from '../../../assets/static/CibusChecks.png';
+import CibusOthers from '../../../assets/static/CibusOthers.png';
+import CibusIcons from '../../../assets/static/CibusIcons.svg';
+
+
+
+
 
 const Cibus = () => {
     const cibusFeatures = [
@@ -114,21 +129,41 @@ const Cibus = () => {
             "colorTitle": "Accent color 3"
         },
         {
-            "id": 4,
+            "id": 16,
             "color": "#76BFAC",
             "colorTitle": "Accent color 4"
         },
         {
-            "id": 4,
+            "id": 17,
             "color": "#F2BD14",
             "colorTitle": "Accent color 5"
         }
     ];
+    const scrollInfo = useScroll(1);
+    const [ scrollIcon, setScrollIcon ] = useState(null);
+    const [ isVisible, setIsVisible ] = useState(true);
+
+
+    useEffect(() => {
+        if (scrollInfo.value < 96){
+            setScrollIcon(
+                    < ScrollIcon index={1} className="scroll-bg" bg={true}/>
+            );
+            setIsVisible(true);
+        }
+        else {
+            setScrollIcon(null);
+            setIsVisible(false);
+        }
+    }, [scrollInfo.value]);
+
+
 
     return (
-        <div className="projet-page">
-            < Header index="4" hideNavigation={ true } showBack={ true } customColor={'orange'}/>
-            < ScrollIcon />
+        <>
+        < Header index="4" hideNavigation={ true } showBack={ isVisible } customColor={'orange'}/>
+        { scrollIcon }
+        <div className="project-page" onScroll={scrollInfo.onScroll}>
             < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
             <section className="grid-column">
                 <span className="project-description">
@@ -291,8 +326,53 @@ const Cibus = () => {
                     and components, to finally put the pieces together each display. 
                 </span>
                 < ProjectColors colors={ cibusColors } />
+
+                <h2 className="project-subtitle">Fonts</h2>
+                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusFonts} alt="Cibus fonts"/>
+
+                <h2 className="project-subtitle">Buttons</h2>
+                <img className="project-img" style={{gridColumn: "4 / 13", margin: "40px 0 260px"}} src={CibusButtons} alt="Cibus buttons"/>
+
+                <h2 className="project-subtitle">Inputs</h2>
+                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusInputs} alt="Cibus inputs"/>
+
+                <h2 className="project-subtitle">Checkbox, radio and switch inputs</h2>
+                <img className="project-img" style={{gridColumn: "4 / 13", margin: "40px 0 260px"}} src={CibusChecks} alt="Cibus checkbox, radio and switch inputs"/>
+
+                <h2 className="project-subtitle">Other inputs</h2>
+                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusOthers} alt="Cibus Others"/>
+
+                <h2 className="project-subtitle">Iconography set</h2>
+                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusIcons} alt="Cibus Iconography"/>
+
+
+                <h1 className="project-title">Conclusion</h1>
+                <span className="project-description">
+                    Cibus accomplished all the main goals that we established at the beginning of the 
+                    project. The process is in average 100% faster than before, even at some task like 
+                    the recipe part is 250% faster. It's easier to understand, making not only the 
+                    process clearer, but encouraging the users to use or discover features that they or 
+                    didn't use it or totally ignore due the frustration to try to understand them. <br/><br/>
+
+                    Finally but not less important, we lowered the complexity of the system improving 
+                    the learning curve and making it easier to understand, which it dropped the support 
+                    calls to 400% less than before. <br/><br/>
+
+                    Even though the complexity of create a new system was a tough challenge at first, 
+                    All people from the customers to the group members of Evolution POS and me are all 
+                    satisfied with the en result. It took us nine months to complete the project, 3 
+                    months less than we planned it. <br/><br/>
+
+                    It's a great change in the form we all work, but one which it will carry the company 
+                    and its products to the next level.
+                </span>
+                <div  className="nav-btn" style={{gridColumn: "5 / 12", gridGap: "1em 15%", maxWidth: "30em", marginBottom: "100px"}}>
+                    < GoBack />
+                    < Next url="/cibus" />
+                </div>
             </section>
         </div>
+        </>
     )
 }
 

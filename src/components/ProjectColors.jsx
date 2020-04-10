@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/styles/ProjectColors.scss'
+import '../../assets/styles/ProjectColors.scss';
 
 const ProjectColors = (props) => {
     return (

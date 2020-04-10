@@ -94,11 +94,9 @@ const Profile = () => {
 
 
     useEffect(() => {
-        if (scrollInfo.value < 59){
+        if (scrollInfo.value < 70){
             setScrollIcon(
-                <div className="scroll-bg-container">
-                    < ScrollIcon index={1} className="scroll-bg"/>
-                </div>
+                    < ScrollIcon index={1} className="scroll-bg" bg={true}/>
             );
             setIsVisible(true);
         }
@@ -116,10 +114,12 @@ const Profile = () => {
                 < HomeImg />
                 <div className="details" onScroll={scrollInfo.onScroll}>
                     <h1>CRISTIAN SUÁREZ</h1>
-                    <span> { age } years old</span><br/>
-                    <span>Base in seville</span><br/>
-                    <span>Fluency in  </span>< SpanishIcon /><span>  &#38;  </span>< EnglishIcon />
-                    <h2>Skills</h2>
+                    <div className="personal-details">
+                        <span> { age } years old</span><br/>
+                        <span>Base in seville</span><br/>
+                        <span>Fluency in  < SpanishIcon />  &#38;  < EnglishIcon /></span>
+                    </div>
+                    <h2 className="skills-title">Skills</h2>
                     <div className="skills">
                         {skills.map(
                             skill => 
@@ -143,7 +143,7 @@ const Profile = () => {
                     </span>
                     <div  className="nav-btn">
                         < GoBack />
-                        < Next />
+                        < Next url="/cibus" />
                     </div>
                 </div>
             </section>

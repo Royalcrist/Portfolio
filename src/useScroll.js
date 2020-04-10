@@ -7,6 +7,7 @@ export default function useScroll(initialValue) {
         setValue(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100));
     }
 
+
     return {
         value,
         onScroll: handleScroll
