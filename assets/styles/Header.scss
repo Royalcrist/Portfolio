@@ -305,6 +305,23 @@
     }
 }
 
+@media screen and (max-width: 1200px) and (min-height: 620px) {
+    .logo {
+        grid-column: 2 / 5;
+        margin-top: 1.4em;
+        height: 2em;
+        font-size: calc(var(--subtitle-size) + 12px);
+    }
+
+    .navbar-i-group {
+        margin-top: 60px;
+    }
+
+    .lang {
+        margin-top: 60px;
+    }
+}
+
 @media (max-width: 768px) {
 
     

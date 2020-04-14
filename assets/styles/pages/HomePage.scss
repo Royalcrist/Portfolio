@@ -171,8 +171,10 @@
     }
 }
 
-@media screen and (max-width: 1200px) and (min-height: 550px) {
+@media screen and (max-width: 1200px) and (min-height: 620px) {
     .info {
+        top: 30%;
+
         & h1 {
             font-size: calc(var(--title-size) + 10px);
         }
@@ -205,6 +207,6 @@
     }
     
     .home-pic {
-        max-width: 340px;
+        max-width: 330px;
     }
 }
