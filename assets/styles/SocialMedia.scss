@@ -1,28 +1,26 @@
 .media {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    position: fixed;
-    bottom: 20px;
-    right: 6%;
-}
+    display: inline-block;
+    position: relative;
+    height: 64px;
+    width: 64px;
+    margin-left: 30px;
+    background-color: #F7F7FA;
+    background-size: cover;
+    border: 1px solid #F2F2F2;
+    box-shadow: inset 3px 2px 6px rgba(0,0,0,.1), inset -2px -3px 6px rgba(255,255,255,1);
+    border-radius: 25px;
 
-.media-btn {
-    height: auto;
-    width: 48px;
-    margin-left: 35px;
-}
+    & img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: .35;
+        transition: ease-in-out .3s;
+    }
 
-.media-btn svg:hover > * {
-    opacity: .5;
-}
-
-.media-contact {
-    bottom: 30vh;
-    right: calc(50% - 58px);
-    z-index: 3;
-}
-
-.media-btn-3 {
-    margin-left: 20px;
+    & img:hover {
+        opacity: .8;
+    }
 }

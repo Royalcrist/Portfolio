@@ -1,10 +1,22 @@
 .indicator {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-items: center;
     margin: 0;
     padding: 0;
-    top: 65vh;
-    right: 7.5%;
-    position: fixed;
+    bottom: 30px;
+    left: 41%;
+    position: absolute;
     z-index: 2;
+    font-size: var(--p-options-size);
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    & span {
+        margin-left: 18px;
+        margin-top: -4px;
+    }
 }
 .i-container {
     position: relative;
@@ -14,27 +26,24 @@
 }
 
 .i-unselected {
-    margin-bottom: .6em;
-    height: .5em;
-    width: .5em;
-    border: 2.5px solid black;
-    border-radius: 50%;
+    margin-bottom: .5em;
+    height: .45em;
+    width: .45em;
+    background-color: #DDDDDD;
+    border-radius: 50px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .i-selected {
     position: absolute;
-    height: .75em;
-    width: .75em;
-    padding: .5em;
+    height: .9em;
+    width: .9em;
     background-color: black;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 10pt;
+    border-radius: 50px;
+    transition: .2s;
 }
 
 .scroll-1_UP {
@@ -51,4 +60,10 @@
 
 .scroll-3_DOWN {
     top: 60%;
+}
+
+@media screen and (max-width: 1200px) and (min-height: 550px) {
+    .indicator {
+        font-size: calc(var(--p-options-size) + 2px);
+    }
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import ScrollIcon from '../../ScrollIcon';
 import Header from '../Header';
 import ProjectPreview from '../ProjectPreview';
 import ProjectFeatures from '../ProjectFeatures';
@@ -146,13 +145,9 @@ const Cibus = () => {
 
     useEffect(() => {
         if (scrollInfo.value < 96){
-            setScrollIcon(
-                    < ScrollIcon index={1} className="scroll-bg" bg={true}/>
-            );
             setIsVisible(true);
         }
         else {
-            setScrollIcon(null);
             setIsVisible(false);
         }
     }, [scrollInfo.value]);
@@ -162,7 +157,6 @@ const Cibus = () => {
     return (
         <>
         < Header index="4" hideNavigation={ true } showBack={ isVisible } customColor={'orange'}/>
-        { scrollIcon }
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
             <section className="grid-column">

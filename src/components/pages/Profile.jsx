@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header';
-import ScrollIcon from '../../ScrollIcon';
-import HomeImg from '../../HomeImg';
 import GoBack from '../GoBack'
 import '../../../assets/styles/pages/Profile.scss'
 import Next from '../Next';
@@ -13,7 +11,6 @@ import EnglishIcon from '../../EnglishIcon'
 
 const Profile = () => {
     const scrollInfo = useScroll(1);
-    const [ scrollIcon, setScrollIcon ] = useState(null);
     const [ isVisible, setIsVisible ] = useState(true);
     const skills = [ 
         { 
@@ -95,13 +92,9 @@ const Profile = () => {
 
     useEffect(() => {
         if (scrollInfo.value < 70){
-            setScrollIcon(
-                    < ScrollIcon index={1} className="scroll-bg" bg={true}/>
-            );
             setIsVisible(true);
         }
         else {
-            setScrollIcon(null);
             setIsVisible(false);
         }
     }, [scrollInfo.value]);
@@ -109,9 +102,7 @@ const Profile = () => {
     return (
         <React.Fragment>
             < Header index="1" hideNavigation={ true } showBack={ isVisible }/>
-            { scrollIcon }
             <section className="grid container">
-                < HomeImg />
                 <div className="details" onScroll={scrollInfo.onScroll}>
                     <h1>CRISTIAN SUÁREZ</h1>
                     <div className="personal-details">
