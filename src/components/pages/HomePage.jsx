@@ -37,7 +37,7 @@ const HomePage = () => {
 
     return (
         <>
-            < Header index={ scrollInfo.value } hideNavigation={false} color={color(scrollInfo.value)}/>
+            < Header index={ scrollInfo.value } showLogo={ true } showNav={ true } color={color(scrollInfo.value)}/>
 
             <div className="media-container">
                 < SocialMedia media={ linkedin }/>

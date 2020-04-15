@@ -172,7 +172,12 @@
 }
 
 @media screen and (max-width: 1200px) and (min-height: 620px) {
+    .info-container {
+        grid-column: 5 / 13;
+    }
+
     .info {
+        margin-left: 1em;
         top: 30%;
 
         & h1 {
@@ -205,12 +210,15 @@
     .info-btn {
         font-size: calc(var(--p-options-size + 4px));
     }
-
-    .img-container {
-        grid-column: 1 / 6;
-    }
     
     .home-pic {
         max-width: 330px;
+    }
+}
+
+@media screen and (max-width: 1030px) and (max-height: 620px) {
+    .info-container {
+        margin-left: 1em;
+        grid-column: 5 / 13;
     }
 }
