@@ -37,6 +37,7 @@ body {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -82,5 +83,126 @@ h2 {
 
     body {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    :root {
+        // Text sizes
+        --p-options-size: 12px;
+        --subtitle-size: 30px;
+        --title-size: 40px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .grid-column {
+        display: grid;
+        grid-template-columns: repeat(10, 6.8%);
+        grid-gap: 0 3.3%;
+    }
+}
+
+@media screen and (max-width: 910px) and (min-height: 600px) {
+    #app {
+        max-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 910px) and (min-height: 750px) {
+    :root {
+        // Text sizes
+        --p-options-size: 14px;
+        --subtitle-size: 30px;
+        --title-size: 40px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 910px) and (min-height: 1000px) {
+    :root {
+        // Text sizes
+        --p-options-size: 18px;
+        --subtitle-size: 25px;
+        --title-size: 54px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 910px) and (min-height: 1250px) {
+    :root {
+        // Text sizes
+        --p-options-size: 22px;
+        --subtitle-size: 25px;
+        --title-size: 72px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 24px;
+    }
+}
+
+//Portrait Phone
+
+@media screen and (max-width: 570px) {
+    :root {
+        // Text sizes
+        --p-options-size: 11px;
+        --subtitle-size: 25px;
+        --title-size: 36px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 14px;
+        letter-spacing: .5px;
+    }
+
+    .grid-column {
+        display: grid;
+        grid-template-columns: 8.5% repeat(4, 17%) 8.5%;
+        grid-gap: 0 3%;
+    }
+}
+
+//Landscape Phone
+
+@media screen and (max-width: 910px) and (max-height: 570px) {
+    :root {
+        // Text sizes
+        --p-options-size: 11px;
+        --subtitle-size: 25px;
+        --title-size: 36px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 570px) and (max-height: 640px) {
+    :root {
+        // Text sizes
+        --p-options-size: 10px;
+        --subtitle-size: 25px;
+        --title-size: 26px;
+        --icon-size: 16px;
+    }
+
+    body {
+        font-size: 12px;
     }
 }

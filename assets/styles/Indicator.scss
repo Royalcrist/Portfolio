@@ -62,8 +62,37 @@
     top: 60%;
 }
 
-@media screen and (max-width: 1200px) and (min-height: 620px) {
+@media screen and (max-width: 1200px) and (min-width: 910px) and (min-height: 620px) {
     .indicator {
         font-size: calc(var(--p-options-size) + 2px);
+    }
+}
+
+@media screen and (max-width: 910px) and (min-height: 800px) {
+    .indicator {
+        font-size: calc(var(--p-options-size) - 2px);
+    }
+}
+
+@media screen and (max-width: 910px) and (max-height: 400px) and (orientation: landscape) {
+    .indicator {
+        left: 75%;
+        bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .indicator {
+        left: 33%;
+        bottom: 10px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) and (orientation: landscape) {
+    .indicator {
+        left: 70%;
+        bottom: 14px;
     }
 }

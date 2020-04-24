@@ -10,6 +10,10 @@
     box-shadow: inset 3px 2px 6px rgba(0,0,0,.1), inset -2px -3px 6px rgba(255,255,255,1);
     border-radius: 25px;
 
+    &:first-child {
+        margin: 0;
+    }
+
     & img {
         position: absolute;
         top: 0;
@@ -22,5 +26,23 @@
 
     & img:hover {
         opacity: .8;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .media {
+        height: 48px;
+        width: 48px;
+        border-radius: 18px;
+        margin-left: 16px;
+    }
+}
+
+@media screen and (max-width: 910px) and (min-height: 768px) {
+    .media {
+        height: 70px;
+        width: 70px;
+        border-radius: 30px;
+        margin-left: 24px;
     }
 }
