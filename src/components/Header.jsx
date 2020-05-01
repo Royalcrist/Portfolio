@@ -108,7 +108,7 @@ const Header = (props) => {
         else{
             setMenu(null);
         }
-    },[props.hideMenu, props.index, isActive, langBtn.status, props.color])
+    },[props.hideMenu, props.index, isActive, langBtn.status, props.color, linkedin, github])
 
     return (
         <nav className={`navbar ${isActive ? 'active' : ''}`}>
