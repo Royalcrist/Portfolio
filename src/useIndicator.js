@@ -16,9 +16,9 @@ export default function useIndicator(initialValue) {
     }
 
     function handleScroll(e) {
-        setValue(useIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
+        setValue(handleIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
     
-        function useIndicator(scrollValue) {
+        function handleIndicator(scrollValue) {
             let indexValue = 1;
     
             if (scrollValue === 0) {
