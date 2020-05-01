@@ -10,6 +10,9 @@ import SpainFlag from '../../assets/static/SpainFlag.png';
 import LangArrow from '../LangArrow'
 import Menu from '../../assets/static/Menu.svg';
 import Close from '../../assets/static/Close.svg';
+import LinkedInSVG from '../../../assets/static/linkedin.svg';
+import GithubSVG from "../../../assets/static/github.svg";
+
 
 
 const Header = (props) => {
@@ -24,13 +27,13 @@ const Header = (props) => {
         "id": 1,
         "description": "LinkedIn",
         "url": "https://www.linkedin.com/in/hicrist/",
-        "logo": "../../../assets/static/linkedin.svg"
+        "logo": LinkedInSVG
     };
     const github = {
         "id": 2,
         "description": "Github",
         "url": "https://github.com/Royalcrist",
-        "logo": "../../../assets/static/github.svg"
+        "logo": GithubSVG
     };
 
 
