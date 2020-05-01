@@ -80,6 +80,8 @@
     box-shadow: inset 4px 1px 6px rgba(0,0,0,.1), inset -4px -3px 6px rgba(255,255,255,1);
     border-radius: 21px;
     cursor: pointer;
+    outline : 0;
+    -webkit-tap-highlight-color: transparent;
 
     & img {
         width: 100%;
@@ -97,6 +99,10 @@
     background-image: var(--gradient-blue);
     border: none;
     box-shadow: none;
+
+    & img {
+        opacity: .9;
+    }
 }
 
 .menu-btn.active::before {
@@ -590,9 +596,9 @@
     }
 
     .menu-btn {
-        height: 40px;
-        width: 40px;
-        border-radius: 16px;
+        height: 50px;
+        width: 50px;
+        border-radius: 20px;
         top: 18px;
     }
 }
