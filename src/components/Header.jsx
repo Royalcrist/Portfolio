@@ -10,8 +10,6 @@ import SpainFlag from '../../assets/static/SpainFlag.png';
 import LangArrow from '../LangArrow'
 import Menu from '../../assets/static/Menu.svg';
 import Close from '../../assets/static/Close.svg';
-import LinkedInSVG from '../../../assets/static/linkedin.svg';
-import GithubSVG from "../../../assets/static/github.svg";
 
 
 
@@ -21,20 +19,6 @@ const Header = (props) => {
     const [back, setBack] = useState(null);
     const [menu, setMenu] = useState(null);
     const [isActive, setIsActive] = useState(false);
-
-    
-    const linkedin = {
-        "id": 1,
-        "description": "LinkedIn",
-        "url": "https://www.linkedin.com/in/hicrist/",
-        "logo": LinkedInSVG
-    };
-    const github = {
-        "id": 2,
-        "description": "Github",
-        "url": "https://github.com/Royalcrist",
-        "logo": GithubSVG
-    };
 
 
     useEffect(() => {
@@ -94,8 +78,8 @@ const Header = (props) => {
                             </Link>
                         </div>
                         <div className="media-container-nav">
-                            < SocialMedia media={ linkedin }/>
-                            < SocialMedia media={ github }/>
+                            < SocialMedia media={ props.socialMedia[0] }/>
+                            < SocialMedia media={ props.socialMedia[1] }/>
                         </div>
                     </div>
 
@@ -108,7 +92,7 @@ const Header = (props) => {
         else{
             setMenu(null);
         }
-    },[props.hideMenu, props.index, isActive, langBtn.status, props.color, linkedin, github])
+    },[props.hideMenu, props.index, isActive, langBtn.status, props.color, props.socialMedia])
 
     return (
         <nav className={`navbar ${isActive ? 'active' : ''}`}>
