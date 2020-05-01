@@ -7,9 +7,12 @@ import '../../../assets/styles/pages/HomePage.scss'
 import { Link } from 'react-router-dom';
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
-import CibusPic from '../../../assets/static/CibusPic.png'
-import ProfilePic from '../../../assets/static/ProfilePic.png'
-import ContactPic from '../../../assets/static/ContactPic.png'
+import CibusPic from '../../../assets/static/CibusPic.png';
+import ProfilePic from '../../../assets/static/ProfilePic.png';
+import ContactPic from '../../../assets/static/ContactPic.png';
+import LinkedInSVG from '../../../assets/static/linkedin.svg';
+import GithubSVG from "../../../assets/static/github.svg";
+
 
 
 const HomePage = () => {
@@ -20,13 +23,13 @@ const HomePage = () => {
         "id": 1,
         "description": "LinkedIn",
         "url": "https://www.linkedin.com/in/hicrist/",
-        "logo": "../../../assets/static/linkedin.svg"
+        "logo": LinkedInSVG
     };
     const github = {
         "id": 2,
         "description": "Github",
         "url": "https://github.com/Royalcrist",
-        "logo": "../../../assets/static/github.svg"
+        "logo": GithubSVG
     };
 
     const color = value => {
