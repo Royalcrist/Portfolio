@@ -16,7 +16,10 @@ const Header = (props) => {
     const langBtn = useStatus();
     const [logo, setLogo] = useState(null);
     const [back, setBack] = useState(null);
+    const [menu, setMenu] = useState(null);
     const [isActive, setIsActive] = useState(false);
+
+    
     const linkedin = {
         "id": 1,
         "description": "LinkedIn",
@@ -60,46 +63,59 @@ const Header = (props) => {
         }
     },[props.showBack])
 
+    useEffect(() => {
+        if (!props.hideMenu) {
+            setMenu(
+                <>
+                    <div className={`menu ${isActive ? 'active' : ''}`}>
+                        <div className="navbar-i-group" style={ !props.showNav ? {display: "none"}: {}}>
+                            <div className={`selected-box selected-${props.index}`}></div>
+                            <HashLink to="/#me" className={`navbar-i ${props.index === 1 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Home</HashLink>
+                            <HashLink to="/#projects" className={`navbar-i ${props.index === 2 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Projects</HashLink>
+                            <HashLink to="/#contact" className={`navbar-i ${props.index === 3 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Contact</HashLink>
+                        </div>
+
+                        <div className={`lang ${langBtn.status}`} onClick={ langBtn.handleStatus } >
+                            <Link to={null} className={`item ${props.color}`}>
+                                <div>
+                                    <img src={ UsaFlag } alt="USA Flag" />
+                                    <p>English</p>
+                                    < LangArrow className="arrow" />
+                                </div>
+                            </Link>
+                            <Link to="/es" className={`item ${langBtn.status}`}>
+                                <div>
+                                    <img src={ SpainFlag } alt="Spain Flag" />
+                                    <p>Spanish</p>
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="media-container-nav">
+                            < SocialMedia media={ linkedin }/>
+                            < SocialMedia media={ github }/>
+                        </div>
+                    </div>
+
+                    <button className={`menu-btn ${isActive ? 'active' : ''}`} onClick={() => {setIsActive(!isActive)}}>
+                        <img src={!isActive ? Menu : Close} alt="Menu icon"/>
+                    </button>
+                </>
+            );
+        }
+        else{
+            setMenu(null);
+        }
+    },[props.hideMenu, props.index, isActive, langBtn.status, props.color])
+
     return (
         <nav className={`navbar ${isActive ? 'active' : ''}`}>
-            <div className="nav-bg"></div>
+            <div className={`nav-bg ${props.hideBg ? 'hide-bg' : ''}`}></div>
             
             { logo }
 
             { back }
 
-            <div className={`menu ${isActive ? 'active' : ''}`}>
-                <div className="navbar-i-group" style={ !props.showNav ? {display: "none"}: {}}>
-                    <div className={`selected-box selected-${props.index}`}></div>
-                    <HashLink to="/#me" className={`navbar-i ${props.index === 1 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Home</HashLink>
-                    <HashLink to="/#projects" className={`navbar-i ${props.index === 2 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Projects</HashLink>
-                    <HashLink to="/#contact" className={`navbar-i ${props.index === 3 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Contact</HashLink>
-                </div>
-
-                <div className={`lang ${langBtn.status}`} onClick={ langBtn.handleStatus } >
-                    <Link to={null} className={`item ${props.color}`}>
-                        <div>
-                            <img src={ UsaFlag } alt="USA Flag" />
-                            <p>English</p>
-                            < LangArrow className="arrow" />
-                        </div>
-                    </Link>
-                    <Link to="/es" className={`item ${langBtn.status}`}>
-                        <div>
-                            <img src={ SpainFlag } alt="Spain Flag" />
-                            <p>Spanish</p>
-                        </div>
-                    </Link>
-                </div>
-                <div className="media-container-nav">
-                    < SocialMedia media={ linkedin }/>
-                    < SocialMedia media={ github }/>
-                </div>
-            </div>
-
-            <button className={`menu-btn ${isActive ? 'active' : ''}`} onClick={() => {setIsActive(!isActive)}}>
-                <img src={!isActive ? Menu : Close} alt="Menu icon"/>
-            </button>
+            { menu }
 
         </nav>
     );

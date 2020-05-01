@@ -156,7 +156,7 @@ const Cibus = () => {
 
     return (
         <>
-        < Header index="4" showBack={ isVisible } customColor={'orange'}/>
+        < Header index="4" showBack={ isVisible } customColor={'orange'} hideMenu={true} hideBg={true}/>
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
             <section className="grid-column">

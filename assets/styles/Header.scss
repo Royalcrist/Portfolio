@@ -19,6 +19,10 @@
     z-index: -1;
 }
 
+.nav-bg.hide-bg {
+    display: none;
+}
+
 .logo {
     height: 2em;
     position: absolute;
@@ -373,15 +377,19 @@
 
 //Small Desktop or Landscape Tablet
 
-@media (max-width: 1030px) {
+@media (max-width: 1030px) and (min-width: 961px) {
     .menu {
         width: 63.4%;
-    }    
+    }
+    
+    .navbar-i-group {
+        margin-left: 1.5em;
+    }
 }
 
 //Small Desktop or Tablet
 
-@media (max-width: 910px) {
+@media (max-width: 960px) {
     .navbar.active {
         height: 100%;
     }
@@ -421,18 +429,18 @@
     }
 
     .navbar-i-group {
-        height: 8em;
-        width: 6em;
+        height: 14em;
+        width: 7em;
         margin-top: 35%;
-        padding: 1em;
+        padding: .3em;
         flex-flow: column nowrap;
         justify-content: center;
-        border-radius: 32px;
+        border-radius: 2.5em;
     }
     
     .navbar-i {
         margin-right: 0;
-        margin-bottom: 33%;
+        margin-bottom: 52%;
     
         &:last-child {
             margin-bottom: 0;
@@ -440,9 +448,9 @@
     }
     
     .selected-box {
-        height: 23%;
-        width: 78%;
-        left: 11%;
+        height: 19%;
+        width: 80%;
+        left: 10%;
     }
     
     .selected-1 {
@@ -450,11 +458,11 @@
     }
     
     .selected-2 {
-        top: 38%;
+        top: 40%;
     }
     
     .selected-3 {
-        top: 69.5%;
+        top: 74.5%;
     }
 
     .lang {
@@ -464,7 +472,7 @@
         margin-top: auto;
 
         &.show .item {
-            padding: .2em 12%;
+            padding: .2em 10%;
         }
     }
 
@@ -474,13 +482,13 @@
     }
 }
 
-@media (max-width: 910px) and (min-height: 580px) {
+@media (max-width: 910px) and (min-height: 660px) {
     .nav-bg {
         height: 8em;
     }
 
     .navbar-i-group {
-        margin-top: 50%;
+        margin-top: 40%;
     }
 
     .media-container-nav {
@@ -488,7 +496,7 @@
     }
 }
 
-@media (max-width: 910px) and (min-height: 750px) {
+@media (max-width: 910px) and (min-width: 570px) and (min-height: 750px) {
     .nav-bg {
         height: 8em;
     }
@@ -507,7 +515,6 @@
 
     .navbar-i-group {
         margin-top: 75%;
-        border-radius: 40px;
     }
 
     .media-container-nav {
@@ -519,16 +526,15 @@
     }
 }
 
-@media (max-width: 910px) and (min-height: 1000px) {
+@media (max-width: 910px) and (min-width: 570px) and (min-height: 1000px) {
     .menu {
-        width: 410px;
+        width: 460px;
     }
 
     .navbar-i-group {
-        height: 12em;
-        width: 9em;
-        margin-top: 65%;
-        border-radius: 60px;
+        height: 16em;
+        width: 8em;
+        margin-top: 60%;
     }
 
     .lang {
@@ -545,7 +551,7 @@
     }
 }
 
-@media screen and (max-width: 910px) and (min-height: 1200px) {
+@media screen and (max-width: 910px) and (min-width: 570px) and (min-height: 1200px) {
     .logo {
         font-size: 48px;
     }
@@ -588,5 +594,98 @@
         width: 40px;
         border-radius: 16px;
         top: 18px;
+    }
+}
+
+@media screen and (max-width: 570px) and (min-height: 641px) {
+    .navbar-i-group {
+        height: 14em;
+        width: 7em;
+        margin-top: 36%;
+        font-size: 18px;
+    }
+
+    .navbar-i {
+        font-size: calc(var(--p-options-size) + 4px);
+    }
+
+    .lang {
+        font-size: 18px;
+
+        & .item {
+            font-size: calc(var(--p-options-size) + 4px);
+        }
+    }
+}
+
+@media screen and (max-width: 570px) and (min-height: 850px) {
+    .navbar-i-group {
+        font-size: 20px;
+    }
+
+    .navbar-i {
+        font-size: calc(var(--p-options-size) + 6px);
+    }
+
+    .lang {
+        font-size: 20px;
+
+        & .item {
+            font-size: calc(var(--p-options-size) + 6px);
+        }
+    }
+}
+
+//Landscape Phone
+
+@media screen and (max-height: 570px) and (max-width: 960px) and (orientation: landscape) {
+    .menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar-i-group {
+        margin-top: 6%;
+        height: 3em;
+        width: 20em;
+        flex-flow: row nowrap;
+        border-radius: 30px;
+    }
+    
+    .navbar-i {
+        margin: 0;
+        margin-right: 15%;
+    }
+    
+    .selected-box {
+        z-index: 0;
+        height: 78%;
+        width: 27%;
+        position: absolute;
+        top: 11%;
+        left: 3%;
+    }
+    
+    .selected-1 {
+        left: 3%;
+        width: 27%;
+    }
+    
+    .selected-2 {
+        left: 33.5%;
+        width: 27%;
+    }
+    
+    .selected-3 {
+        left: 70%;
+        width: 27%;
+    }
+
+    .lang {
+        margin: 6% 0 0;
+    }
+
+    .media-container-nav {
+        margin: 6% 0 0;
     }
 }

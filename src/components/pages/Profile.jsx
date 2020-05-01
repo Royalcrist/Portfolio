@@ -7,6 +7,8 @@ import useScroll from '../../useScroll'
 import ageCalculator from '../../ageCalculator';
 import SpanishIcon from '../../SpanishIcon'
 import EnglishIcon from '../../EnglishIcon'
+import ProfilePic from '../../../assets/static/ProfilePic.png'
+
 
 
 const Profile = () => {
@@ -101,8 +103,13 @@ const Profile = () => {
 
     return (
         <React.Fragment>
-            < Header index="1" hideNavigation={ true } showBack={ isVisible }/>
-            <section className="grid container">
+            < Header index="1" hideNavigation={ true } showBack={ isVisible } hideBg={ true }/>
+            <section className="grid-column container">
+
+                <div className="img-container">
+                    <img className="home-pic" src={ProfilePic} alt="My profile pic :)"/>
+                </div>
+
                 <div className="details" onScroll={scrollInfo.onScroll}>
                     <h1>CRISTIAN SUÁREZ</h1>
                     <div className="personal-details">

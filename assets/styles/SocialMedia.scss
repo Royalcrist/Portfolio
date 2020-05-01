@@ -29,7 +29,9 @@
     }
 }
 
-@media screen and (max-width: 910px) {
+//Small Desktop and Landscape tablet
+
+@media screen and (max-width: 960px) {
     .media {
         height: 48px;
         width: 48px;
@@ -38,11 +40,46 @@
     }
 }
 
-@media screen and (max-width: 910px) and (min-height: 768px) {
+//Portrait tablet
+
+@media screen and (max-width: 910px) and (min-height: 768px) and (orientation: portrait) {
     .media {
         height: 70px;
         width: 70px;
         border-radius: 30px;
         margin-left: 24px;
     }
+}
+
+@media screen and (max-width: 910px) and (min-height: 1000px) {
+    .media {
+        height: 90px;
+        width: 90px;
+        border-radius: 38px;
+        margin-left: 36px;
+    }
+}
+
+//Portrait Phone
+
+@media screen and (max-width: 570px) and (min-height: 641px) {
+    .media {
+        height: 60px;
+        width: 60px;
+        border-radius: 25px;
+        margin-left: 24px;
+    }
+}
+
+@media screen and (max-width: 570px) and (min-height: 850px) {
+    .media {
+        height: 70px;
+        width: 70px;
+        border-radius: 30px;
+        margin-left: 24px;
+    }
+}
+
+@media screen and (max-height: 570px) and (orientation: landscape) {
+    
 }
