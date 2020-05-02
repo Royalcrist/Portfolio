@@ -7,9 +7,11 @@ import '../../../assets/styles/pages/HomePage.scss'
 import { Link } from 'react-router-dom';
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
-import CibusPic from '../../../assets/static/CibusPic.png';
 import ProfilePic from '../../../assets/static/ProfilePic.png';
+import CibusPic from '../../../assets/static/CibusPic.png';
+import CibusPicLq from '../../../assets/static/CibusPicLq.png';
 import ContactPic from '../../../assets/static/ContactPic.png';
+import ContactPicLq from '../../../assets/static/ContactPicLq.png';
 import LinkedInSVG from '../../../assets/static/linkedin.svg';
 import GithubSVG from "../../../assets/static/github.svg";
 
@@ -67,8 +69,9 @@ const HomePage = () => {
                 </section>
 
                 <section id="projects" className="grid-column container">
-                    <div className="img-container">
-                        <img className="home-pic" src={CibusPic} alt="My profile pic :)"/>
+                    <div className="img-container project">
+                        <img className="home-pic hq project" src={CibusPic} alt="My profile pic :)"/>
+                        <img className="home-pic lq project" src={CibusPicLq} alt="My profile pic :)"/>
                     </div>
                     <div className="info-container">
                         <div className="info">
@@ -83,7 +86,8 @@ const HomePage = () => {
 
                 <section id="contact" className="grid-column container">
                     <div className="img-container">
-                        <img className="home-pic" src={ ContactPic } alt="Contact me :)"/>
+                        <img className="home-pic hq" src={ ContactPic } alt="Contact me :)"/>
+                        <img className="home-pic lq" src={ ContactPicLq } alt="Contact me :)"/>
                     </div>
                     <div className="info-container">
                         <div className="info contact-info">
