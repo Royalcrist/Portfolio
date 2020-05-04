@@ -213,9 +213,15 @@
 
 //Small Desktop or Landscape Tablets
 
-@media screen and (max-width: 1030px) and (min-width: 570px) and (orientation: landscape) {
+@media screen and (max-width: 1024px) {
+    .media-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 570px) and (orientation: landscape) {
     .info-container {
-        margin-left: 3em;
+        margin-left: 0;
         grid-column: 5 / 13;
     }
 }
@@ -278,10 +284,6 @@
         &.lq.project {
             width: 85%;
         }
-    }
-
-    .media-container {
-        display: none;
     }
 }
 
@@ -436,11 +438,11 @@
 
 @media screen and (max-width: 380px) and (min-width: 341px) and (orientation: portrait) {
     .img-container{
-        height: 95%;
+        height: 90%;
     }
 
     .info {
-        top: 0;
+        top: -5%;
     }
 
     .home-pic.lq.project {
@@ -448,7 +450,7 @@
     }
 }
 
-@media screen and (max-width: 380px) and (min-width: 341px) and (min-height: 660px) and (orientation: portrait) {
+@media screen and (max-width: 380px) and (min-width: 341px) and (min-height: 680px) and (orientation: portrait) {
     .img-container{
         height: 100%;
     }

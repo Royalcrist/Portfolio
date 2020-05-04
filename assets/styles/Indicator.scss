@@ -107,19 +107,13 @@
 
 @media screen and (max-width: 420px) and (orientation: portrait) {
     .indicator {
+        bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 380px) and (orientation: portrait) {
+    .indicator {
         bottom: 30px;
-    }
-}
-
-@media screen and (max-width: 420px) and (min-height: 750px) and (orientation: portrait) {
-    .indicator {
-        bottom: 40px;
-    }
-}
-
-@media screen and (max-width: 380px) and (min-height: 620px) and (orientation: portrait) {
-    .indicator {
-        bottom: 40px;
     }
 }
 
