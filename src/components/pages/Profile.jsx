@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../Header';
-import GoBack from '../GoBack'
 import '../../../assets/styles/pages/Profile.scss'
 import Next from '../Next';
 import useScroll from '../../useScroll'
@@ -10,6 +8,29 @@ import EnglishIcon from '../../EnglishIcon'
 import ProfilePic from '../../../assets/static/ProfilePic.png'
 import LinkedInSVG from '../../../assets/static/linkedin.svg';
 import GithubSVG from "../../../assets/static/github.svg";
+import Indicator from '../Indicator'
+
+//Skills imports
+import skillsFigma from "../../../assets/static/skillsFigma.svg";
+import skillsXd from "../../../assets/static/skillsXd.svg";
+import skillsPhotoshop from "../../../assets/static/skillsPhotoshop.svg";
+import skillsAi from "../../../assets/static/skillsAi.svg";
+import skillsHtml from "../../../assets/static/skillsHtml.svg";
+import skillsCss from "../../../assets/static/skillsCss.svg";
+import skillsJs from "../../../assets/static/skillsJs.svg";
+import skillsNode from "../../../assets/static/skillsNode.svg";
+import skillsReact from "../../../assets/static/skillsReact.svg";
+import skillsAngular from "../../../assets/static/skillsAngular.svg";
+import skillsExpress from "../../../assets/static/skillsExpress.svg";
+import skillsGit from "../../../assets/static/skillsGit.svg";
+import skillsGithub from "../../../assets/static/skillsGithub.svg";
+import skillsLinux from "../../../assets/static/skillsLinux.svg";
+import skillsJava from "../../../assets/static/skillsJava.svg";
+import skillsPython from "../../../assets/static/skillsPython.svg";
+import skillsCplus from "../../../assets/static/skillsCplus.svg";
+import skillsMongo from "../../../assets/static/skillsMongo.svg";
+import BackBtn from '../BackBtn';
+
 
 
 const Profile = ( props ) => {
@@ -17,76 +38,94 @@ const Profile = ( props ) => {
     const [ isVisible, setIsVisible ] = useState(true);
     const skills = [ 
         { 
+            id: 1,
             name: 'Figma', 
-            file: 'skillsFigma.svg' 
+            file: skillsFigma 
         }, 
         {
+            id: 2,
             name: 'Adobe XD', 
-            file: 'skillsXd.svg' 
+            file: skillsXd 
         },
         {
+            id: 4,
             name: 'Adobe Photoshop', 
-            file: 'skillsPhotoshop.svg' 
+            file: skillsPhotoshop
         },
         {
+            id: 4,
             name: 'Adobe Ilustrator', 
-            file: 'skillsAi.svg' 
+            file: skillsAi
         },        
         {
+            id: 5,
             name: 'HTML', 
-            file: 'skillsHtml.svg' 
+            file: skillsHtml 
         },        
         {
+            id: 6,
             name: 'CSS', 
-            file: 'skillsCss.svg' 
+            file: skillsCss
         },
         {
+            id: 7,
             name: 'Javascript', 
-            file: 'skillsJs.svg' 
+            file: skillsJs
         },
         {
+            id: 8,
             name: 'NodeJS', 
-            file: 'skillsNode.svg' 
+            file: skillsNode
         },
         {
+            id: 9,
             name: 'React', 
-            file: 'skillsReact.svg' 
+            file: skillsReact
         },
         {
+            id: 10,
             name: 'Angular', 
-            file: 'skillsAngular.svg' 
+            file: skillsAngular 
         },
         {
+            id: 11,
             name: 'Express', 
-            file: 'skillsExpress.svg' 
+            file: skillsExpress
         },
         {
+            id: 12,
             name: 'MongoDB', 
-            file: 'skillsCss.svg' 
+            file: skillsMongo
         },
         {
+            id: 13,
             name: 'Git', 
-            file: 'skillsGit.svg' 
+            file: skillsGit
         },
         {
+            id: 14,
             name: 'GitHub', 
-            file: 'skillsGithub.svg' 
+            file: skillsGithub 
         },
         {
+            id: 15,
             name: 'Linux', 
-            file: 'skillsLinux.svg' 
+            file: skillsLinux
         },
         {
+            id: 16,
             name: 'Java', 
-            file: 'skillsJava.svg' 
+            file: skillsJava
         },
         {
+            id: 17,
             name: 'Python', 
-            file: 'skillsPython.svg' 
+            file: skillsPython
         },
         {
+            id: 18,
             name: 'C++', 
-            file: 'skillsCplus.svg' 
+            file: skillsCplus
         },
     ];
     const age = ageCalculator(8, 9, 1999);
@@ -116,7 +155,7 @@ const Profile = ( props ) => {
 
     return (
         <React.Fragment>
-            < Header index="1" hideNavigation={ true } showBack={ isVisible } hideBg={ true } socialMedia={[ github, linkedin ]}/>
+            < BackBtn hide={ true } />
             <section className="grid-column container">
 
                 <div className="img-container">
@@ -130,17 +169,18 @@ const Profile = ( props ) => {
                         <span>Base in seville</span><br/>
                         <span>Fluency in  < SpanishIcon />  &#38;  < EnglishIcon /></span>
                     </div>
-                    <h2 className="skills-title">Skills</h2>
+                    <h2>Skills</h2>
                     <div className="skills">
                         {skills.map(
                             skill => 
-                                <div className="skill-icon">
-                                    <img src={ staticAssets + skill.file } alt={ skill.name } style={ { height: '60px', with: 'auto' } } /> 
+                                <div key={skill.id} className="skill-icon">
+                                    <img src={ skill.file } alt={ skill.name } style={ { width: '4.8em' } } /> 
                                     <span>{ skill.name }</span>
                                 </div> 
                             )
                         }
                     </div>
+                    <h2>Background</h2>
                     <span>
                         Since I was a child I have been curious about the technological world and I've loved it from the first moment I discovered it. So when I was around 8 years old, I decided to start learning about computer science and design. Since then I haven't stopped learning.<br/>
                         <br/>
@@ -153,11 +193,11 @@ const Profile = ( props ) => {
                         In addition, the fact that someone has positively influenced one of the solutions I created motivates me to continue giving my best and never stop innovating.<br/>
                     </span>
                     <div  className="nav-btn">
-                        < GoBack />
                         < Next url="/cibus" />
                     </div>
                 </div>
             </section>
+            {/* < Indicator /> */}
         </React.Fragment>
     )
 }

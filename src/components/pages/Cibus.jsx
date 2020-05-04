@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Header from '../Header';
 import ProjectPreview from '../ProjectPreview';
 import ProjectFeatures from '../ProjectFeatures';
 import ProjectColors from '../ProjectColors';
 import Next from '../Next';
-import GoBack from '../GoBack'
 import useScroll from '../../useScroll'
 
 
@@ -139,7 +137,6 @@ const Cibus = () => {
         }
     ];
     const scrollInfo = useScroll(1);
-    const [ scrollIcon, setScrollIcon ] = useState(null);
     const [ isVisible, setIsVisible ] = useState(true);
 
 
@@ -156,7 +153,6 @@ const Cibus = () => {
 
     return (
         <>
-        < Header index="4" showBack={ isVisible } customColor={'orange'} hideMenu={true} hideBg={true}/>
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
             <section className="grid-column">
@@ -361,7 +357,6 @@ const Cibus = () => {
                     and its products to the next level.
                 </span>
                 <div  className="nav-btn" style={{gridColumn: "5 / 12", gridGap: "1em 15%", maxWidth: "30em", marginBottom: "100px"}}>
-                    < GoBack />
                     < Next url="/cibus" />
                 </div>
             </section>

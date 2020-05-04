@@ -1,21 +1,4 @@
-@mixin lang-item {
-    display: inline-block;
-    position: relative;
-    color: white;
-    z-index: 0;
-}
-
-@mixin lang-item-shadow {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    height: 80%;
-    width: 80%;
-    border-radius: 3.5em;
-    filter: blur(.5em);
-    z-index: -1;
-}
+@import "./Mixins.scss";
 
 .navbar {
     position: absolute;
@@ -34,7 +17,7 @@
     left: 0;
     height: 6em;
     width: 100%;
-    background-color: white;
+    background-color: var(--background);
     z-index: -1;
 }
 
@@ -94,11 +77,9 @@
     height: 50px;
     width: 50px;
     padding: 0;
-    background-color: #F7F7FA;
-    border: 1px solid #F2F2F2;
-    box-shadow: inset 4px 1px 6px rgba(0,0,0,.1), inset -4px -3px 6px rgba(255,255,255,1);
     border-radius: 21px;
     cursor: pointer;
+    @include skmpsm-style;
 
     & img {
         width: 100%;
@@ -146,10 +127,8 @@
     justify-content: center;
     align-items: center;
     font-size: var(--p-options-size);
-    background-color: #F7F7FA;
-    border: 1px solid #F2F2F2;
-    box-shadow: inset 4px 1px 6px rgba(0,0,0,.1), inset -4px -3px 6px rgba(255,255,255,1);
     border-radius: 50px;
+    @include skmpsm-style;
 }
 
 .navbar-i {
@@ -213,11 +192,9 @@
     align-items: center;
     justify-content: center;
     font-size: var(--p-options-size);
-    background-color: #F7F7FA;
-    border: 1px solid #F2F2F2;
-    box-shadow: inset 4px 1px 6px rgba(0,0,0,.1), inset -4px -3px 6px rgba(255,255,255,1);
     border-radius: 2.5em;
     transition: .5s;
+    @include skmpsm-style;
 
     &:before {
         content: '';

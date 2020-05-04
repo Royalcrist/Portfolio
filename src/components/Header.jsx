@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import '../../assets/styles/Header.scss';
 import SocialMedia from '../components/SocialMedia';
-import GoBack from './GoBack';
 import useStatus from '../useStatus';
 import UsaFlag from '../../assets/static/UsaFlag.png';
 import SpainFlag from '../../assets/static/SpainFlag.png';
@@ -16,7 +15,6 @@ import Close from '../../assets/static/Close.svg';
 const Header = (props) => {
     const langBtn = useStatus();
     const [logo, setLogo] = useState(null);
-    const [back, setBack] = useState(null);
     const [menu, setMenu] = useState(null);
     const [isActive, setIsActive] = useState(false);
 
@@ -36,19 +34,6 @@ const Header = (props) => {
             setLogo(null);
         }
     },[props.showLogo, props.index])
-
-    useEffect(() => {
-        if (props.showBack) {
-            setBack(
-                <div className="go-back-header">
-                    < GoBack/>
-                </div>
-            );
-        }
-        else{
-            setBack(null);
-        }
-    },[props.showBack])
 
     useEffect(() => {
         if (!props.hideMenu) {
@@ -99,8 +84,6 @@ const Header = (props) => {
             <div className={`nav-bg ${props.hideBg ? 'hide-bg' : ''}`}></div>
             
             { logo }
-
-            { back }
 
             { menu }
 
