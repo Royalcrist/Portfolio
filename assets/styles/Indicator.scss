@@ -62,12 +62,35 @@
     top: 60%;
 }
 
-@media screen and (max-width: 910px) and (max-height: 400px) and (orientation: landscape) {
+//Desktop
+
+@media screen and (min-width: 1400px) and (min-height: 900px) and (orientation: landscape) {
     .indicator {
-        left: 75%;
-        bottom: 40px;
+        bottom: 50px;
     }
 }
+
+//Tablet Portrait
+
+@media (max-width: 1024px) and (min-height: 1000px) and (orientation: portrait) {
+    .indicator {
+        bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 910px) and (orientation: portrait) {
+    .indicator {
+        left: 37%;
+    }
+}
+
+@media screen and (max-width: 910px) and (min-width: 769px) and (min-height: 1200px) and (orientation: portrait) {
+    .indicator {
+        bottom: 50px;
+    }
+}
+
+//Mobile Portrait
 
 @media screen and (max-width: 570px) {
     .indicator {

@@ -8,10 +8,11 @@ import ageCalculator from '../../ageCalculator';
 import SpanishIcon from '../../SpanishIcon'
 import EnglishIcon from '../../EnglishIcon'
 import ProfilePic from '../../../assets/static/ProfilePic.png'
+import LinkedInSVG from '../../../assets/static/linkedin.svg';
+import GithubSVG from "../../../assets/static/github.svg";
 
 
-
-const Profile = () => {
+const Profile = ( props ) => {
     const scrollInfo = useScroll(1);
     const [ isVisible, setIsVisible ] = useState(true);
     const skills = [ 
@@ -90,6 +91,18 @@ const Profile = () => {
     ];
     const age = ageCalculator(8, 9, 1999);
     const staticAssets = '../../../assets/static/';
+    const linkedin = {
+        "id": 1,
+        "description": "LinkedIn",
+        "url": "https://www.linkedin.com/in/hicrist/",
+        "logo": LinkedInSVG
+    };
+    const github = {
+        "id": 2,
+        "description": "Github",
+        "url": "https://github.com/Royalcrist",
+        "logo": GithubSVG
+    };
 
 
     useEffect(() => {
@@ -103,7 +116,7 @@ const Profile = () => {
 
     return (
         <React.Fragment>
-            < Header index="1" hideNavigation={ true } showBack={ isVisible } hideBg={ true }/>
+            < Header index="1" hideNavigation={ true } showBack={ isVisible } hideBg={ true } socialMedia={[ github, linkedin ]}/>
             <section className="grid-column container">
 
                 <div className="img-container">

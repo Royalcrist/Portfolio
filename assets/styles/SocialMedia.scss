@@ -31,7 +31,7 @@
 
 //Small Desktop and Landscape tablet
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
     .media {
         height: 48px;
         width: 48px;
@@ -39,8 +39,16 @@
         margin-left: 16px;
     }
 }
-
 //Portrait tablet
+
+@media (max-width: 1024px) and (min-height: 1200px) and (orientation: portrait) {
+    .media {
+        height: 100px;
+        width: 100px;
+        border-radius: 40px;
+        margin-left: 34px;
+    }
+}
 
 @media screen and (max-width: 910px) and (min-height: 768px) and (orientation: portrait) {
     .media {
