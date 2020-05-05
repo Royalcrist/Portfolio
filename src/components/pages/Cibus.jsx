@@ -17,6 +17,7 @@ import CibusInputs from '../../../assets/static/CibusInputs.svg';
 import CibusChecks from '../../../assets/static/CibusChecks.png';
 import CibusOthers from '../../../assets/static/CibusOthers.png';
 import CibusIcons from '../../../assets/static/CibusIcons.svg';
+import BackBtn from '../BackBtn';
 
 
 
@@ -153,6 +154,7 @@ const Cibus = () => {
 
     return (
         <>
+        < BackBtn hideBg={ true }/>
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
             <section className="grid-column">

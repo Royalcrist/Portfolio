@@ -1,13 +1,14 @@
 @import "./Mixins.scss";
 
 .media {
+    font-size: var(--p-options-size);
     display: inline-block;
     position: relative;
-    height: 64px;
-    width: 64px;
-    margin-left: 30px;
+    height: 4.4em;
+    width: 4.4em;
+    margin-left: 2.4em;
     background-size: cover;
-    border-radius: 25px;
+    border-radius: 1.8em;
     @include skmpsm-style;
 
     &:first-child {
@@ -31,63 +32,10 @@
 
 //Small Desktop and Landscape tablet
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     .media {
-        height: 48px;
-        width: 48px;
-        border-radius: 18px;
-        margin-left: 16px;
+        height: 5em;
+        width: 5em;
+        border-radius: 1.9em;
     }
-}
-//Portrait tablet
-
-@media (max-width: 1024px) and (min-height: 1200px) and (orientation: portrait) {
-    .media {
-        height: 100px;
-        width: 100px;
-        border-radius: 40px;
-        margin-left: 34px;
-    }
-}
-
-@media screen and (max-width: 910px) and (min-height: 768px) and (orientation: portrait) {
-    .media {
-        height: 70px;
-        width: 70px;
-        border-radius: 30px;
-        margin-left: 24px;
-    }
-}
-
-@media screen and (max-width: 910px) and (min-height: 1200px) {
-    .media {
-        height: 90px;
-        width: 90px;
-        border-radius: 38px;
-        margin-left: 36px;
-    }
-}
-
-//Portrait Phone
-
-@media screen and (max-width: 570px) and (min-height: 641px) {
-    .media {
-        height: 60px;
-        width: 60px;
-        border-radius: 25px;
-        margin-left: 24px;
-    }
-}
-
-@media screen and (max-width: 570px) and (min-height: 850px) {
-    .media {
-        height: 70px;
-        width: 70px;
-        border-radius: 30px;
-        margin-left: 24px;
-    }
-}
-
-@media screen and (max-height: 570px) and (orientation: landscape) {
-    
 }

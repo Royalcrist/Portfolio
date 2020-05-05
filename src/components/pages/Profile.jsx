@@ -155,7 +155,7 @@ const Profile = ( props ) => {
 
     return (
         <React.Fragment>
-            < BackBtn hide={ true } />
+            < BackBtn hideBg={ true } />
             <section className="grid-column container">
 
                 <div className="img-container">
@@ -182,15 +182,24 @@ const Profile = ( props ) => {
                     </div>
                     <h2>Background</h2>
                     <span>
-                        Since I was a child I have been curious about the technological world and I've loved it from the first moment I discovered it. So when I was around 8 years old, I decided to start learning about computer science and design. Since then I haven't stopped learning.<br/>
-                        <br/>
-                        At 12 I started programming and at 14 I started designing, facts that have changed my life forever. Best of all, I love both worlds, because incurring both allows me to be in all stages of the product; from birth to deployment.<br/>
-                        <br/>
-                        As I always liked to create things that solve problems in my day to day, when I learned to develop software it was like magic, suddenly all those creations that I had in my mind could make them come alive.<br/>
-                        <br/>
-                        "the most complex problems has the most simple solutions"<br/>
-                        <br/>
-                        In addition, the fact that someone has positively influenced one of the solutions I created motivates me to continue giving my best and never stop innovating.<br/>
+                        Since I was a child I have been curious about the technological world 
+                        and I've loved it from the first moment I discovered it. So when I was 
+                        around 8 years old, I decided to start learning about computer science 
+                        and design. Since then I haven't stopped learning.<br/><br/>
+
+                        At 12 I started programming and at 14 I started designing, facts that have 
+                        changed my life forever. Best of all, I love both worlds, because incurring 
+                        both allows me to be in all stages of the product; from birth to deployment.<br/><br/>
+
+                        As I always liked to create things that solve problems in my day to day, when 
+                        I learned to develop software it was like magic, suddenly all those creations 
+                        that I had in my mind could make them come alive.<br/><br/>
+
+                        "the most complex problems has the most simple solutions"<br/><br/>
+
+                        In addition, the fact that someone has positively influenced one of the 
+                        solutions I created motivates me to continue giving my best and never stop 
+                        innovating.                    
                     </span>
                     <div  className="nav-btn">
                         < Next url="/cibus" />

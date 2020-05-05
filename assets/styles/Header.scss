@@ -350,18 +350,6 @@
     }
 }
 
-//Small Desktop or Landscape Tablet
-
-@media (max-width: 1030px) and (min-width: 961px) and (orientation: landscape) {
-    .menu {
-        width: 63.4%;
-    }
-    
-    .navbar-i-group {
-        margin-left: 1.5em;
-    }
-}
-
 //Small Desktop or Tablet
 
 @media (max-width: 1024px) {
@@ -389,7 +377,7 @@
         align-items: center;
         top: 0;
         right: 100%;
-        width: 50%;
+        width: 60%;
         height: 100%;
         background-color: var(--background);
         box-shadow: 0 10px 20px rgba(0,0,0,.2);
@@ -479,7 +467,7 @@
     }
 }
 
-@media (max-width: 910px) and (min-height: 660px) {
+@media (max-width: 910px) and (min-height: 660px) and (orientation: portrait) {
     .nav-bg {
         height: 8em;
     }
@@ -489,7 +477,7 @@
     }
 }
 
-@media (max-width: 910px) and (min-width: 570px) and (min-height: 750px) {
+@media (max-width: 910px) and (min-width: 570px) and (min-height: 750px) and (orientation: portrait) {
     .nav-bg {
         height: 8em;
     }
@@ -511,7 +499,7 @@
     }
 }
 
-@media screen and (max-width: 910px) and (min-width: 570px) and (min-height: 1200px) {
+@media screen and (max-width: 910px) and (min-width: 570px) and (min-height: 1200px) and (orientation: portrait) {
     .logo {
         font-size: 48px;
     }
