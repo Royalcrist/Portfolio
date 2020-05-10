@@ -1,0 +1,63 @@
+.button {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 1em 2.3em;
+    border-radius: 50px;
+    transition: .5s;
+
+    &:hover {
+        margin-top: -1em;
+        opacity: .85;
+        font-weight: 600;
+    }
+
+    &-small {
+        font-size: calc(var(--description-size) - 2px);
+    }
+
+    &-blue {
+        background-image: var(--gradient-blue);
+    
+        &::before {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            height: 80%;
+            width: 80%;
+            background-image: var(--gradient-blue);
+            border-radius: 3.2em;
+            filter: blur(.5em);
+            opacity: .6;
+            z-index: -1;
+            transition: .5s;
+        }
+    
+        &:hover::before {
+            height: 70%;
+            width: 70%;
+            top: 50%;
+            left: 15%;
+            opacity: .45;
+        }
+    }
+    
+    &-orange {
+        background-image: var(--gradient-orange);
+    
+        
+        &::before {
+            @extend .button-blue;
+            background-image: var(--gradient-orange);
+        }
+    
+        &:hover::before {
+            @extend .button-blue:hover::before;
+        }
+    }
+}
+
+
+

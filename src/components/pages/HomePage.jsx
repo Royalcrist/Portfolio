@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Header';
 import SocialMedia from '../SocialMedia';
 import Indicator from '../Indicator'
 import useIndicator from '../../useIndicator'
+import Button from '../Button';
+import { ProjectsContext } from '../contexts/ProjectsProvider'
 import '../../../assets/styles/pages/HomePage.scss'
-import { Link } from 'react-router-dom';
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
 import ProfilePic from '../../../assets/static/ProfilePic.png';
-import CibusPic from '../../../assets/static/CibusPic.png';
-import CibusPicLq from '../../../assets/static/CibusPicLq.png';
 import ContactPic from '../../../assets/static/ContactPic.png';
 import ContactPicLq from '../../../assets/static/ContactPicLq.png';
 import LinkedInSVG from '../../../assets/static/linkedin.svg';
@@ -34,6 +34,8 @@ const HomePage = () => {
         "logo": GithubSVG
     };
 
+    const projects = useContext(ProjectsContext);
+
     const color = value => {
         if (value === 1) return 'blue';
         else if (value === 2) return 'orange';
@@ -42,7 +44,7 @@ const HomePage = () => {
 
     return (
         <>
-            < Header index={ scrollInfo.value } showLogo={ true } showNav={ true } color={color(scrollInfo.value)} socialMedia={[ github, linkedin ]}/>
+            < Header index={ scrollInfo.value } showLogo={ true } showNav={ true } color={color(scrollInfo.value)} socialMedia={{ github, linkedin }}/>
 
             <div className="media-container">
                 < SocialMedia media={ linkedin }/>
@@ -63,23 +65,21 @@ const HomePage = () => {
                             <span>
                                 UX/UI Designer &#38; Frontend Developer based in Seville who always wear a smile at work. 
                             </span><br/>
-                            < Link to="/profile" className="info-btn profile-btn">Know me</Link>
+                            < Button url={'/profile'}>Know me</ Button>
                         </div>
                     </div>
                 </section>
 
                 <section id="projects" className="grid-column container">
                     <div className="img-container project">
-                        <img className="home-pic hq project" src={CibusPic} alt="My profile pic :)"/>
-                        <img className="home-pic lq project" src={CibusPicLq} alt="My profile pic :)"/>
+                        <img className="home-pic hq project" src={ projects[0].img } alt="My profile pic :)"/>
+                        <img className="home-pic lq project" src={ projects[0].imgLq } alt="My profile pic :)"/>
                     </div>
                     <div className="info-container">
                         <div className="info">
-                            <h1 className="title">CIBUS</h1>
-                            <span>
-                                The Point of Sale System that you don't have to learn.
-                            </span><br/>
-                            < Link to="/cibus" className="info-btn project-btn">View case</Link>
+                            <h1 className="title">{ projects[0].name }</h1>
+                            <span>{ projects[0].description }</span><br/>
+                            < Button url={projects[0].url} color={ projects[0].color } >View case</ Button>
                         </div>
                     </div>
                 </section>

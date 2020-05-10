@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import Profile from './pages/Profile';
 import Cibus from './pages/Cibus';
 import '../../assets/styles/App.scss'
+import { ProjectsProvider } from './contexts/ProjectsProvider';
 
 
 const App = () => {
@@ -18,13 +19,15 @@ const App = () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={ HomePage } />
-                <Route path="/profile" component={ Profile } />
-                <Route path="/cibus" component={Cibus} />
-            </Switch>
-        </BrowserRouter>
+        < ProjectsProvider >
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={ HomePage } />
+                    <Route path="/profile" component={ Profile } />
+                    <Route path="/cibus" component={Cibus} />
+                </Switch>
+            </BrowserRouter>
+        </ProjectsProvider>
     );
 }
 

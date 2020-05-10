@@ -13,6 +13,7 @@ import Close from '../../assets/static/Close.svg';
 
 
 const Header = (props) => {
+    const { github, linkedin } = props.socialMedia;
     const langBtn = useStatus();
     const [logo, setLogo] = useState(null);
     const [menu, setMenu] = useState(null);
@@ -63,8 +64,8 @@ const Header = (props) => {
                             </Link>
                         </div>
                         <div className="media-container-nav">
-                            < SocialMedia media={ props.socialMedia[0] }/>
-                            < SocialMedia media={ props.socialMedia[1] }/>
+                            < SocialMedia media={ github }/>
+                            < SocialMedia media={ linkedin }/>
                         </div>
                     </div>
 

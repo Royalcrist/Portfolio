@@ -2,7 +2,9 @@
 
 :root {
     // Text sizes
+    --description-size: 14px;
     --p-options-size: 16px;
+    --label-size: 28px;
     --subtitle-size: 35px;
     --title-size: 50px;
     
@@ -65,7 +67,13 @@ h1 {
 
 h2 {
     font-size: var(--subtitle-size);
+    font-weight: 600;
     line-height: 1;
+}
+
+h3 {
+    font-size: var(--label-size);
+    font-weight: 700;
 }
 
 a, button {
@@ -83,7 +91,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 16px;
-        --subtitle-size: 35px;
+        --description-size: 14px;
+        --label-size: 28px;
+        --subtitle-size: 36px;
         --title-size: 54px;
         
     }
@@ -101,7 +111,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 14px;
-        --subtitle-size: 25px;
+        --description-size: 11px;
+        --label-size: 24px;
+        --subtitle-size: 30px;
         --title-size: 40px;
         
     }
@@ -115,7 +127,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 12px;
-        --subtitle-size: 25px;
+        --description-size: 11px;
+        --label-size: 20px;
+        --subtitle-size: 30px;
         --title-size: 40px;
         
     }
@@ -129,6 +143,8 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 12px;
+        --description-size: 10px;
+        --label-size: 18px;
         --subtitle-size: 30px;
         --title-size: 40px;
         
@@ -158,6 +174,8 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 14px;
+        --description-size: 11px;
+        --label-size: 20px;
         --subtitle-size: 30px;
         --title-size: 40px;
         
@@ -172,7 +190,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 22px;
-        --subtitle-size: 30px;
+        --description-size: 18px;
+        --label-size: 36px;
+        --subtitle-size: 50px;
         --title-size: 72px;
         
     }
@@ -186,6 +206,8 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 14px;
+        --description-size: 12px;
+        --label-size: 24px;
         --subtitle-size: 30px;
         --title-size: 40px;
         
@@ -200,7 +222,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 18px;
-        --subtitle-size: 25px;
+        --description-size: 14px;
+        --label-size: 28px;
+        --subtitle-size: 42px;
         --title-size: 54px;
         
     }
@@ -214,7 +238,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 22px;
-        --subtitle-size: 25px;
+        --description-size: 16px;
+        --label-size: 32px;
+        --subtitle-size: 52px;
         --title-size: 72px;
         
     }
@@ -228,7 +254,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 20px;
-        --subtitle-size: 25px;
+        --description-size: 14px;
+        --label-size: 28px;
+        --subtitle-size: 42px;
         --title-size: 52px;
         
     }
@@ -239,26 +267,13 @@ a, button {
     }
 }
 
-@media screen and (max-width: 768px) and (min-width: 571px) and (min-height: 1150px) and (orientation: portrait) {
-    :root {
-        // Text sizes
-        --p-options-size: 16px;
-        --subtitle-size: 25px;
-        --title-size: 48px;
-        
-    }
-
-    body {
-        font-size: 20px;
-        letter-spacing: .5px;
-    }
-}
-
 @media screen and (max-width: 768px) and (min-width: 571px) and (orientation: portrait) {
     :root {
         // Text sizes
         --p-options-size: 16px;
-        --subtitle-size: 25px;
+        --description-size: 14px;
+        --label-size: 28px;
+        --subtitle-size: 40px;
         --title-size: 48px;
         
     }
@@ -283,7 +298,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 14px;
-        --subtitle-size: 25px;
+        --description-size: 11px;
+        --label-size: 20px;
+        --subtitle-size: 36px;
         --title-size: 44px;
         
     }
@@ -298,7 +315,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 16px;
-        --subtitle-size: 25px;
+        --description-size: 12px;
+        --label-size: 24px;
+        --subtitle-size: 40px;
         --title-size: 50px;
         
     }
@@ -313,7 +332,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 12px;
-        --subtitle-size: 25px;
+        --description-size: 11px;
+        --label-size: 20px;
+        --subtitle-size: 24px;
         --title-size: 36px;
         
     }
@@ -328,7 +349,7 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 14px;
-        --subtitle-size: 25px;
+        --subtitle-size: 30px;
         --title-size: 40px;
         
     }
@@ -343,7 +364,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 12px;
-        --subtitle-size: 25px;
+        --description-size: 12px;
+        --label-size: 20px;
+        --subtitle-size: 24px;
         --title-size: 36px;
         
     }
@@ -358,7 +381,7 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 11px;
-        --subtitle-size: 25px;
+        --subtitle-size: 24px;
         --title-size: 32px;
         
     }
@@ -373,7 +396,7 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 14px;
-        --subtitle-size: 25px;
+        --subtitle-size: 30px;
         --title-size: 40px;
         
     }
@@ -388,7 +411,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 11px;
-        --subtitle-size: 25px;
+        --description-size: 11px;
+        --label-size: 20px;
+        --subtitle-size: 24px;
         --title-size: 32px;
         
     }
@@ -403,6 +428,7 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 12px;
+        --label-size: 20px;
         --subtitle-size: 25px;
         --title-size: 36px;
         
@@ -418,7 +444,9 @@ a, button {
     :root {
         // Text sizes
         --p-options-size: 10px;
-        --subtitle-size: 25px;
+        --description-size: 10px;
+        --label-size: 18px;
+        --subtitle-size: 20px;
         --title-size: 26px;
         
     }

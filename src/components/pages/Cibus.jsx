@@ -18,6 +18,8 @@ import CibusChecks from '../../../assets/static/CibusChecks.png';
 import CibusOthers from '../../../assets/static/CibusOthers.png';
 import CibusIcons from '../../../assets/static/CibusIcons.svg';
 import BackBtn from '../BackBtn';
+import FeaturedProjects from '../FeaturedProjects';
+import Indicator from '../Indicator';
 
 
 
@@ -150,11 +152,14 @@ const Cibus = () => {
         }
     }, [scrollInfo.value]);
 
+    console.log(isVisible)
+
 
 
     return (
         <>
-        < BackBtn hideBg={ true }/>
+        < Indicator modeTwo={ true } style={ !isVisible ? {display: 'none'} : {}}/>
+        < BackBtn />
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
             <section className="grid-column">
@@ -358,9 +363,7 @@ const Cibus = () => {
                     It's a great change in the form we all work, but one which it will carry the company 
                     and its products to the next level.
                 </span>
-                <div  className="nav-btn" style={{gridColumn: "5 / 12", gridGap: "1em 15%", maxWidth: "30em", marginBottom: "100px"}}>
-                    < Next url="/cibus" />
-                </div>
+                < FeaturedProjects className="related-grid" />
             </section>
         </div>
         </>

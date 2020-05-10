@@ -13,9 +13,10 @@
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: 120% 250px, 100% 300px, cover;
-    background-position: center -90px, center bottom, center top;
+    background-size: cover;
+    background-position: center top;
     z-index: 0;
+    border-radius: 0 0 0 20em;
 }
 
 
