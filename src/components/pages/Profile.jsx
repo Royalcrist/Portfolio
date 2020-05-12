@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../assets/styles/pages/Profile.scss'
 import BackBtn from '../BackBtn';
 import useScroll from '../../useScroll'
@@ -68,8 +68,7 @@ const Profile = ( props ) => {
                         solutions I created motivates me to continue giving my best and never stop 
                         innovating.                    
                     </span>
-
-                    < FeaturedProjects />
+                    < FeaturedProjects className="related-grid" />
                 </div>
             </section>
             < Indicator modeTwo={ true } notCenter={ true }/>

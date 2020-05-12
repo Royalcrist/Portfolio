@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import ProjectPreview from '../ProjectPreview';
 import ProjectFeatures from '../ProjectFeatures';
 import ProjectColors from '../ProjectColors';
-import Next from '../Next';
 import useScroll from '../../useScroll'
 
 
 import '../../../assets/styles/pages/Cibus.scss';
+import CibusPreview from '../../../assets/static/CibusPreview.jpg';
 import UxProcess from '../../../assets/static/UxProcess.png';
 import InfoArch from '../../../assets/static/InfoArchitecture.png';
 import Proto from '../../../assets/static/CibusProto.png';
@@ -161,7 +160,14 @@ const Cibus = () => {
         < Indicator modeTwo={ true } style={ !isVisible ? {display: 'none'} : {}}/>
         < BackBtn />
         <div className="project-page" onScroll={scrollInfo.onScroll}>
-            < ProjectPreview projectName="Cibus" projectRole="UX/UI Designer" projectDate="2018" source="../../../assets/static/CibusPreview.jpg" alt="Cibus Preview"/>
+            <section className="preview grid-column">
+                <div className="preview-img-container" style={{backgroundImage: `url(${CibusPreview})`}}></div>
+                <div className="preview-info">
+                    <h1>Cibus</h1>
+                    <span>UX / UI Designer</span><br/>
+                    <span>2018</span>
+                </div>    
+            </section>
             <section className="grid-column">
                 <span className="project-description">
                 Cibus is a Point of Sale System (POS) conceived to be secure, 
@@ -325,22 +331,22 @@ const Cibus = () => {
                 < ProjectColors colors={ cibusColors } />
 
                 <h2 className="project-subtitle">Fonts</h2>
-                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusFonts} alt="Cibus fonts"/>
+                <img className="project-img project-img-small" src={CibusFonts} alt="Cibus fonts"/>
 
                 <h2 className="project-subtitle">Buttons</h2>
-                <img className="project-img" style={{gridColumn: "4 / 13", margin: "40px 0 260px"}} src={CibusButtons} alt="Cibus buttons"/>
+                <img className="project-img project-img-small" src={CibusButtons} alt="Cibus buttons"/>
 
                 <h2 className="project-subtitle">Inputs</h2>
-                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusInputs} alt="Cibus inputs"/>
+                <img className="project-img project-img-small" src={CibusInputs} alt="Cibus inputs"/>
 
                 <h2 className="project-subtitle">Checkbox, radio and switch inputs</h2>
-                <img className="project-img" style={{gridColumn: "4 / 13", margin: "40px 0 260px"}} src={CibusChecks} alt="Cibus checkbox, radio and switch inputs"/>
+                <img className="project-img project-img-small" src={CibusChecks} alt="Cibus checkbox, radio and switch inputs"/>
 
                 <h2 className="project-subtitle">Other inputs</h2>
-                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusOthers} alt="Cibus Others"/>
+                <img className="project-img project-img-small" src={CibusOthers} alt="Cibus Others"/>
 
                 <h2 className="project-subtitle">Iconography set</h2>
-                <img className="project-img" style={{gridColumn: "4 / 13", margin: "60px 0 260px"}} src={CibusIcons} alt="Cibus Iconography"/>
+                <img className="project-img project-img-small" src={CibusIcons} alt="Cibus Iconography"/>
 
 
                 <h1 className="project-title">Conclusion</h1>
@@ -363,7 +369,7 @@ const Cibus = () => {
                     It's a great change in the form we all work, but one which it will carry the company 
                     and its products to the next level.
                 </span>
-                < FeaturedProjects className="related-grid" />
+                < FeaturedProjects className="related-grid-projects" />
             </section>
         </div>
         </>

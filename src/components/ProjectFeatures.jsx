@@ -4,14 +4,14 @@ import '../../assets/styles/ProjectFeatures.scss'
 const ProjectFeatures = (props) => {
     return (
         props.features.map( feature => (
-            <div key={feature.id} className="project-features" style={(feature.isReverse) ? {gridColumn: "3 / 15"} : {} }>
-                <div className="feature-container" style={(feature.isReverse) ? {gridColumn: "1"} : {} }>
-                    <h1 className="feature-title"  style={(!feature.description) ? {marginBottom: '30%'} : {} }>{ feature.title }</h1><br/>
+            <div key={feature.id} className={`project-features ${ feature.isReverse ? 'project-features-reverse' : '' }`} >
+                <div className={`feature-container ${ feature.isReverse ? 'feature-container-reverse' : '' }`} >
+                    <h2 className="feature-title"  style={(!feature.description) ? {marginBottom: '30%'} : {} }>{ feature.title }</h2><br/>
                     <span className="feature-description">
                         {feature.description}
                     </span>
                 </div>
-                <img className="feature-img" src={feature.img} alt={feature.alt} style={(feature.isReverse) ? {gridColumn: "2"} : {} }/>
+                <img className={`feature-img ${ feature.isReverse ? 'feature-img-reverse' : '' }`} src={feature.img} alt={feature.alt} />
             </div>)
         )
     );
