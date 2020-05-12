@@ -2,6 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import ProjectFeatures from '../ProjectFeatures';
 import ProjectColors from '../ProjectColors';
 import useScroll from '../../useScroll'
+import Indicator from '../Indicator';
+import FeaturedProjects from '../FeaturedProjects';
+import BackBtn from '../BackBtn';
 
 
 import '../../../assets/styles/pages/Cibus.scss';
@@ -16,10 +19,9 @@ import CibusInputs from '../../../assets/static/CibusInputs.svg';
 import CibusChecks from '../../../assets/static/CibusChecks.png';
 import CibusOthers from '../../../assets/static/CibusOthers.png';
 import CibusIcons from '../../../assets/static/CibusIcons.svg';
-import BackBtn from '../BackBtn';
-import FeaturedProjects from '../FeaturedProjects';
-import Indicator from '../Indicator';
-
+import Feature1 from '../../../assets/static/feature1.png';
+import Feature2 from '../../../assets/static/feature2.png';
+import Feature3 from '../../../assets/static/feature3.png';
 
 
 
@@ -30,7 +32,7 @@ const Cibus = () => {
             "id": 1,
             "title": "Keep it all in the same page",
             "description": "All you need to run the business are in one page, making easier to find out every option.",
-            "img": "../../../assets/static/feature1.png",
+            "img": Feature1,
             "alt": "Menu feature image",
             "isReverse": false
         },
@@ -38,7 +40,7 @@ const Cibus = () => {
             "id": 2,
             "title": "zero excuses to pay",
             "description": "An agile payment methods display that allow you to keep track all the transactions, add more methods and charging the customer every way they want.",
-            "img": "../../../assets/static/feature2.png",
+            "img": Feature2,
             "alt": "Payment feature",
             "isReverse": true
         },
@@ -46,7 +48,7 @@ const Cibus = () => {
             "id": 3,
             "title": "And there is more...",
             "description": null,
-            "img": "../../../assets/static/feature3.png",
+            "img": Feature3,
             "alt": "More features image",
             "isReverse": false
         }
