@@ -22,6 +22,8 @@ import CibusIcons from '../../../assets/static/CibusIcons.svg';
 import Feature1 from '../../../assets/static/feature1.png';
 import Feature2 from '../../../assets/static/feature2.png';
 import Feature3 from '../../../assets/static/feature3.png';
+import ProblemTop from '../../../assets/static/ProblemTop.svg';
+import ProblemBottom from '../../../assets/static/ProblemBottom.svg';
 
 
 
@@ -187,7 +189,7 @@ const Cibus = () => {
                 </span>
                 < ProjectFeatures features={ cibusFeatures } />
             </section>
-            <section  className="grid-column project-problem" style={{backgroundImage: `url('../../../assets/static/ProblemTop.svg'), linear-gradient(#FF9438, #FF4400), url('../../../assets/static/ProblemBottom.svg')`}}>
+            <section  className="grid-column project-problem" style={{backgroundImage: `url(${ProblemTop}), linear-gradient(#FF9438, #FF4400), url(${ProblemBottom})`}}>
                 <h1 className="project-title">Background</h1>
                 <span className="project-description">
                     Evolution POS is a Venezuela-Base software company that make tech solutions 
