@@ -71,7 +71,7 @@ const Profile = ( props ) => {
                     < FeaturedProjects className="related-grid" />
                 </div>
             </section>
-            < Indicator modeTwo={ true } notCenter={ true }/>
+            < Indicator modeTwo={ true } notCenter={ true } style={ !isVisible ? {display: 'none'} : {}}/>
         </React.Fragment>
     )
 }
