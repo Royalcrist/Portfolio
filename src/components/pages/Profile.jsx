@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import '../../../assets/styles/pages/Profile.scss'
 import BackBtn from '../BackBtn';
 import useScroll from '../../useScroll'
@@ -14,11 +14,9 @@ import FeaturedProjects from '../FeaturedProjects';
 
 
 const Profile = ( props ) => {
-    const scrollInfo = useScroll(1);
+    const scrollInfo = useScroll(0);
     const [ isVisible, setIsVisible ] = useState(true);
     const age = ageCalculator(8, 9, 1999);
-
-    console.log(scrollInfo);
 
     useEffect(() => {
         if (scrollInfo.value < 78){

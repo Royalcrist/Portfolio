@@ -145,7 +145,6 @@ const Cibus = () => {
     const scrollInfo = useScroll(1);
     const [ isVisible, setIsVisible ] = useState(true);
 
-
     useEffect(() => {
         if (scrollInfo.value < 96){
             setIsVisible(true);
@@ -154,10 +153,6 @@ const Cibus = () => {
             setIsVisible(false);
         }
     }, [scrollInfo.value]);
-
-    console.log(isVisible)
-
-
 
     return (
         <>
