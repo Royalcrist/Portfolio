@@ -158,7 +158,7 @@ const Cibus = () => {
 
     return (
         <>
-        < Indicator modeTwo={ true } style={ !isVisible ? {display: 'none'} : {}}/>
+        < Indicator modeTwo={ true } style={ !isVisible ? {bottom: '-7em'} : {}}/>
         < BackBtn />
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             <section className="preview grid-column">
