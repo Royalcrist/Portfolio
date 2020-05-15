@@ -1,36 +1,37 @@
 import React, { useEffect, useState, useRef } from 'react';
-import '../../../assets/styles/pages/Profile.scss'
+import '../../../assets/styles/pages/Profile.scss';
 import BackBtn from '../BackBtn';
-import useScroll from '../../useScroll'
+import useScroll from '../../useScroll';
 import ageCalculator from '../../ageCalculator';
-import SpanishIcon from '../../SpanishIcon'
-import EnglishIcon from '../../EnglishIcon'
+import SpanishIcon from '../../SpanishIcon';
+import EnglishIcon from '../../EnglishIcon';
 import ProfilePic from '../../../assets/static/ProfilePic.png'
 import Indicator from '../Indicator';
 import { Skills } from '../Skills';
 import FeaturedProjects from '../FeaturedProjects';
-
+import usePrev from '../../usePrev';
 
 
 
 const Profile = ( props ) => {
     const scrollInfo = useScroll(0);
+    const prev = usePrev(scrollInfo.value)
     const [ isVisible, setIsVisible ] = useState(true);
     const age = ageCalculator(8, 9, 1999);
 
     useEffect(() => {
-        if (scrollInfo.value < 78){
+        if (scrollInfo.value < prev){
             setIsVisible(true);
         }
-        else {
+        else if (scrollInfo.value > prev) {
             setIsVisible(false);
         }
-    }, [scrollInfo.value]);
+    });
 
     return (
         <React.Fragment>
             < BackBtn />
-            <section className="grid-column profile-page" onScroll={scrollInfo.onScroll}>
+            <section className="grid-column profile-page" onScroll={ scrollInfo.onScroll }>
 
                 <div className="profile-container">
                     <img className="profile-pic" src={ProfilePic} alt="My profile pic :)"/>
@@ -47,10 +48,10 @@ const Profile = ( props ) => {
                     < Skills />
                     <h2>Background</h2>
                     <span>
-                        Since I was a child I have been curious about the technological world 
-                        and I've loved it from the first moment I discovered it. So when I was 
-                        around 8 years old, I decided to start learning about computer science 
-                        and design. Since then I haven't stopped learning.<br/><br/>
+                        Since I was a child I have been curious about the technological world and 
+                        I've loved it from the first moment I discovered it. So when I was around 
+                        8 years old, I decided to start learning about computer science and design. 
+                        Since then I haven't stopped learning.<br/><br/>
 
                         At 12 I started programming and at 14 I started designing, facts that have 
                         changed my life forever. Best of all, I love both worlds, because incurring 
@@ -60,11 +61,8 @@ const Profile = ( props ) => {
                         I learned to develop software it was like magic, suddenly all those creations 
                         that I had in my mind could make them come alive.<br/><br/>
 
-                        "the most complex problems has the most simple solutions"<br/><br/>
-
-                        In addition, the fact that someone has positively influenced one of the 
-                        solutions I created motivates me to continue giving my best and never stop 
-                        innovating.                    
+                        Besides, the fact that someone has positively influenced one of the solutions I 
+                        created motivates me to continue giving my best and never stop innovating.                
                     </span>
                     < FeaturedProjects className="related-grid" />
                 </div>

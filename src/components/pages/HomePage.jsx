@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../Header';
 import SocialMedia from '../SocialMedia';
 import Indicator from '../Indicator'
 import useIndicator from '../../useIndicator'
+import useScroll from '../../useScroll'
 import Button from '../Button';
 import { ProjectsContext } from '../contexts/ProjectsProvider'
 import '../../../assets/styles/pages/HomePage.scss'
@@ -18,7 +18,8 @@ import GithubSVG from "../../../assets/static/github.svg";
 
 
 const HomePage = () => {
-    const scrollInfo = useIndicator(1);
+    const scroll = useScroll(0);
+    const scrollInfo = useIndicator(scroll.value);
     const email = "cristiansuarezg7@gmail.com";
     const number = "+34 645 40 31 64";
     const linkedin = {
@@ -33,7 +34,6 @@ const HomePage = () => {
         "url": "https://github.com/Royalcrist",
         "logo": GithubSVG
     };
-
     const projects = useContext(ProjectsContext);
 
     const color = value => {
@@ -51,9 +51,9 @@ const HomePage = () => {
                 < SocialMedia media={ github }/>
             </div>
 
-            < Indicator index={ scrollInfo.value } previousIndex={ scrollInfo.previous }/>
+            < Indicator index={ scrollInfo.value } previousIndex={ scrollInfo.prev }/>
 
-            <div className="page" onScroll={ scrollInfo.onScroll }>
+            <div className="page" onScroll={ scroll.onScroll }>
                 <section id="me" className="grid-column container">
                     <div className="img-container">
                         <img className="home-pic" src={ProfilePic} alt="My profile pic :)"/>

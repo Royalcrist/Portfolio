@@ -24,7 +24,7 @@
 }
 
 .more-projects {
-    height: 45em;
+    height: 42em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -41,6 +41,12 @@
     &-projects {
         grid-column: 5 / 12;
         margin-bottom: 5em;
+    }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 780px) and (orientation: landscape) {
+    .more-projects {
+        height: 45em;
     }
 }
 

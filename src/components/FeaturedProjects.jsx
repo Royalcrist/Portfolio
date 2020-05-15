@@ -25,7 +25,7 @@ const FeaturedProjects = props => {
             
             <div className="more-projects">
                 <h2>And there are more...</h2>
-                < Button url={'/'} >Discover all</ Button>
+                < Button url={'/#projects'} >Discover all</ Button>
             </div>
         </div>
     );

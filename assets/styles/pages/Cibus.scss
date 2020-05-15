@@ -39,7 +39,7 @@
 
 .project-title {
     display: inline-block;
-    margin: 4em 0 1.2em;
+    margin: 0 0 2em;
     grid-column: 5 / 12;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -55,14 +55,14 @@
     color: var(--text-secundary);
 
     &:last-child {
-        margin-bottom: 10em;
+        margin-bottom: 9em;
     }
 }
 
 
 .project-subtitle {
     display: inline-block;
-    margin: 3em 0 2em;
+    margin: 0 0 1.5em;
     grid-column: 5 / 12;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -71,11 +71,11 @@
 .project-img {
     max-width: 100%;
     grid-column: 4 / 14;
-    margin-bottom: 7em;
+    margin-bottom: 14em;
 
     &-small {
         grid-column: 5 / 13;
-        margin: 4em 0 14em;
+        margin: 4em 0 16em;
     }
 }
 

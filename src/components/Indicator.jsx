@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../../assets/styles/Indicator.scss'
-import scrollDirection from '../scrollDirection'
 
 
 const Indicator = props => {
@@ -11,7 +10,7 @@ const Indicator = props => {
                     <div className="i-unselected"></div>
                     <div className="i-unselected"></div>
                     <div className="i-unselected"></div>
-                    <div className={`i-selected scroll-${props.index}_${scrollDirection(props.index, props.previousIndex)}`}></div>
+                    <div className={`i-selected scroll-${props.index}`}></div>
                 </div>
                 <span>Scroll for more</span>
             </div>

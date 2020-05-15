@@ -1,43 +1,33 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import usePrev from './usePrev';
 
-export default function useIndicator(initialValue) {
-    const [ value, setValue] = useState(initialValue);
-    const previous = usePreviousValue(value);
+export default function useIndicator( scroll ) {
+    const prev = usePrev(index);
+    const [ index, setIndex ] = useState(1);
 
-    function usePreviousValue (value) {
-        const ref = useRef(1);
+    useEffect ( () => {
+        setIndex( handleIndicator(scroll) );
+    }, [scroll])
 
-        useEffect(() => {
-            ref.current = value;
-        });
 
-        return ref.current;
+    function handleIndicator(scroll) {
+        let indexValue = 1;
 
-    }
-
-    function handleScroll(e) {
-        setValue(handleIndicator(Math.round((e.target.scrollTop / e.target.scrollHeight) * 100)));
-    
-        function handleIndicator(scrollValue) {
-            let indexValue = 1;
-    
-            if (scrollValue === 0) {
-                indexValue = 1;
-            }
-            else if (scrollValue >= 33 && scrollValue < 58) {
-                indexValue = 2;
-            }
-            else if (scrollValue >= 58) {
-                indexValue = 3;
-            }
-    
-            return indexValue;
+        if (scroll === 0) {
+            indexValue = 1;
         }
+        else if (scroll >= 33 && scroll < 58) {
+            indexValue = 2;
+        }
+        else if (scroll >= 58) {
+            indexValue = 3;
+        }
+
+        return indexValue;
     }
 
     return {
-        value,
-        previous,
-        onScroll: handleScroll
+        value: index,
+        prev
     }
 }
