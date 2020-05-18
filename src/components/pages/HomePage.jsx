@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../Header';
 import SocialMedia from '../SocialMedia';
 import Indicator from '../Indicator'
 import useIndicator from '../../useIndicator'
 import useScroll from '../../useScroll'
 import Button from '../Button';
-import { ProjectsContext } from '../contexts/ProjectsProvider'
 import '../../../assets/styles/pages/HomePage.scss'
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
@@ -14,6 +13,7 @@ import ContactPic from '../../../assets/static/ContactPic.png';
 import ContactPicLq from '../../../assets/static/ContactPicLq.png';
 import LinkedInSVG from '../../../assets/static/linkedin.svg';
 import GithubSVG from "../../../assets/static/github.svg";
+import HomeProjects from '../HomeProjects';
 
 
 
@@ -34,7 +34,6 @@ const HomePage = () => {
         "url": "https://github.com/Royalcrist",
         "logo": GithubSVG
     };
-    const projects = useContext(ProjectsContext);
 
     const color = value => {
         if (value === 1) return 'blue';
@@ -70,35 +69,23 @@ const HomePage = () => {
                     </div>
                 </section>
 
-                <section id="projects" className="grid-column container">
-                    <div className="img-container project">
-                        <img className="home-pic hq project" src={ projects[0].img } alt="My profile pic :)"/>
-                        <img className="home-pic lq project" src={ projects[0].imgLq } alt="My profile pic :)"/>
-                    </div>
-                    <div className="info-container">
-                        <div className="info">
-                            <h1 className="title">{ projects[0].name }</h1>
-                            <span>{ projects[0].description }</span><br/>
-                            < Button url={projects[0].url} color={ projects[0].color } >View case</ Button>
-                        </div>
-                    </div>
-                </section>
+                < HomeProjects />
 
                 <section id="contact" className="grid-column container">
                     <div className="img-container">
-                        <img className="home-pic hq" src={ ContactPic } alt="Contact me :)"/>
-                        <img className="home-pic lq" src={ ContactPicLq } alt="Contact me :)"/>
+                        <img className="home-pic hq contact" src={ ContactPic } alt="Contact me :)"/>
+                        <img className="home-pic lq contact" src={ ContactPicLq } alt="Contact me :)"/>
                     </div>
                     <div className="info-container">
                         <div className="info contact-info">
                             <h1 className="title">GET IN TOUCH</h1>
                             <div className="contact-container">
                                 < EmailIcon />
-                                <a className="contact" href={`mailto:${email}`} >{ email }</a><br/>
+                                <a className="contact" href={`mailto:${ email }`} >{ email }</a><br/>
                             </div>
                             <div className="contact-container">
                                 < PhoneIcon />
-                                <a className="contact" href={`tel:${number}`} >{ number }</a>
+                                <a className="contact" href={`tel:${ number }`} >{ number }</a>
                             </div>
                         </div>
                     </div>

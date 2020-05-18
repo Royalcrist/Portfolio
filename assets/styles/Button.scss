@@ -57,6 +57,31 @@
             @extend .button-blue:hover::before;
         }
     }
+
+    &-red {
+        background-image: var(--gradient-red);
+    
+        
+        &::before {
+            @extend .button-blue;
+            background-image: var(--gradient-red);
+        }
+    
+        &:hover::before {
+            @extend .button-blue:hover::before;
+        }
+    }
+
+    &-disable {
+        pointer-events: none;
+        cursor: default;
+        color: var(--text-secundary);
+        background: rgba($color: #5F5F5F, $alpha: .1);
+
+        &::before {
+            display: none;
+        }
+    }
 }
 
 

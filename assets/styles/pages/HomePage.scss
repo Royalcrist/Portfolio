@@ -28,6 +28,14 @@
     width: 100%;
     position: absolute;
     bottom: 0;
+
+    &.project {
+        width: 90%;
+    }
+
+    &.contact {
+        width: 90%;
+    }
 }
 
 .home-pic.lq {
@@ -37,6 +45,7 @@
 
 .info-container {
     grid-column: 6 / 13;
+    grid-row: 1;
     position: relative;
     z-index: 0;
 }
