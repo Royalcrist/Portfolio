@@ -4,6 +4,7 @@ import React, { createContext } from 'react';
 import CibusPic from '../../../assets/static/CibusPic.png';
 import CibusPicLq from '../../../assets/static/CibusPicLq.png';
 import GobasketPic from '../../../assets/static/GobasketPic.png';
+import GobasketPicLq from '../../../assets/static/GobasketPicLq.png';
 
 export const ProjectsContext = createContext();
 
@@ -23,7 +24,7 @@ export const ProjectsProvider = props => {
             name: "GoBasket",
             description: "More than a shop-list app. Organize all your groceries on one tap.",
             img: GobasketPic,
-            imgLq: GobasketPic,
+            imgLq: GobasketPicLq,
             url: "/gobasket",
             color: "red",
             isDisable: true
