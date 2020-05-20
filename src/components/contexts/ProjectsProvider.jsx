@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 //Data
 import CibusPic from '../../../assets/static/CibusPic.png';
@@ -31,8 +31,10 @@ export const ProjectsProvider = props => {
         },
     ];
 
+    const [ index, setIndex ] = useState(0); 
+
     return (
-        < ProjectsContext.Provider value={ projects }>
+        < ProjectsContext.Provider value={ { projects, index, setIndex } }>
             {props.children}
         </ProjectsContext.Provider>
     );

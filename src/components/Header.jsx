@@ -13,7 +13,8 @@ import Close from '../../assets/static/Close.svg';
 
 
 const Header = (props) => {
-    const { github, linkedin } = props.socialMedia;
+    const { index, showLogo, showNav, hideMenu, hideBg, color, socialMedia } = props;
+    const { github, linkedin } = socialMedia;
     const langBtn = useStatus();
     const [logo, setLogo] = useState(null);
     const [menu, setMenu] = useState(null);
@@ -21,12 +22,12 @@ const Header = (props) => {
 
 
     useEffect(() => {
-        if (props.showLogo) {
+        if (showLogo) {
             setLogo (
                 <React.Fragment>
                     <div className="logo">
                         <span>cristian</span>
-                        <div className={`logo-dot dot-${props.index}`}></div>
+                        <div className={`logo-dot ${ color }`}></div>
                     </div>
                 </React.Fragment>
             );
@@ -34,22 +35,22 @@ const Header = (props) => {
         else{
             setLogo(null);
         }
-    },[props.showLogo, props.index])
+    },[showLogo, color])
 
     useEffect(() => {
-        if (!props.hideMenu) {
+        if (!hideMenu) {
             setMenu(
                 <>
                     <div className={`menu ${isActive ? 'active' : ''}`}>
-                        <div className="navbar-i-group" style={ !props.showNav ? {display: "none"}: {}}>
-                            <div className={`selected-box selected-${props.index}`}></div>
-                            <HashLink to="/#me" className={`navbar-i ${props.index === 1 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Home</HashLink>
-                            <HashLink to="/#projects" className={`navbar-i ${props.index === 2 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Projects</HashLink>
-                            <HashLink to="/#contact" className={`navbar-i ${props.index === 3 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Contact</HashLink>
+                        <div className="navbar-i-group" style={ !showNav ? {display: "none"}: {}}>
+                            <div className={`selected-box selected-${index}`}></div>
+                            <HashLink to="/#me" className={`navbar-i ${index === 1 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Home</HashLink>
+                            <HashLink to="/#projects" className={`navbar-i ${index === 2 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Projects</HashLink>
+                            <HashLink to="/#contact" className={`navbar-i ${index === 3 ? 'selected' : ''}`} onClick={() => {if (isActive) setIsActive(!isActive);}}>Contact</HashLink>
                         </div>
 
                         <div className={`lang ${langBtn.status}`} onClick={ langBtn.handleStatus } >
-                            <Link to={null} className={`item ${props.color}`}>
+                            <Link to={null} className={`item ${ langBtn.status === 'show' ? color : ''}`}>
                                 <div>
                                     <img src={ UsaFlag } alt="USA Flag" />
                                     <p>English</p>
@@ -78,11 +79,11 @@ const Header = (props) => {
         else{
             setMenu(null);
         }
-    },[props.hideMenu, props.index, isActive, langBtn.status, props.color, props.socialMedia])
+    },[hideMenu, index, isActive, langBtn.status, color, socialMedia])
 
     return (
         <nav className={`navbar ${isActive ? 'active' : ''}`}>
-            <div className={`nav-bg ${props.hideBg ? 'hide-bg' : ''}`}></div>
+            <div className={`nav-bg ${hideBg ? 'hide-bg' : ''}`}></div>
             
             { logo }
 

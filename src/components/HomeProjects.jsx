@@ -6,8 +6,7 @@ import { ProjectsContext } from './contexts/ProjectsProvider';
 import Navigation from '../../assets/static/Navigation.svg';
 
 const HomeProjects = props => {
-    const projects = useContext(ProjectsContext);
-    const [ index, setIndex ] = useState(0);
+    const { projects, index, setIndex } = useContext(ProjectsContext);
     const { name, description, img, imgLq, url, color, isDisable } = projects[ index ];
 
     return (
@@ -17,25 +16,37 @@ const HomeProjects = props => {
                 <img className="home-pic lq project" src={ imgLq } alt="My profile pic :)"/>
             </div>
 
-            <div className="prev-container">
-                <button className="nav-prev" onClick={() => { setIndex( index >= 1 ? index - 1 : index ) }}>
-                    <img src={ Navigation } alt="Previous"/>
-                </button>
-            </div>
 
-            <div className="next-container">       
-                <button className="nav-next" onClick={() => { setIndex( index < projects.length -1 ? index + 1 : index ) }}>
-                    <img src={ Navigation } alt="Next"/>
-                </button>
-            </div>
+            {
+                index !== 0 &&
+                <div className="prev-container">
+                    <button className="nav-prev" onClick={() => { setIndex( index >= 1 ? index - 1 : index ) }}>
+                        <img src={ Navigation } alt="Previous"/>
+                    </button>
+                </div>
+            }
 
-            <div className="info-container">
-                <div className="info">
+            {
+                index !== projects.length -1 &&
+                <div className="next-container">       
+                    <button className="nav-next" onClick={() => { setIndex( index < projects.length -1 ? index + 1 : index ) }}>
+                        <img src={ Navigation } alt="Next"/>
+                    </button>
+                </div>
+            }
+
+            <div className="info-container project-container">
+                <div className="info project-info">
                     <h1 className="title">{ name }</h1>
                     <span>{ description }</span><br/>
                     < Button url={ url } color={ color } isDisable={ isDisable }>
-                        { isDisable ? 'Coming soon!' : 'View case' }
+                        { isDisable ? 'Soon!' : 'View case' }
                     </ Button>
+                    <div className="project-indicator">
+                        <span className="project-indicator-current" style={{color: 'var(--text-primary)'}}>{ `${index + 1 < 10 ? '0' : ''}${index + 1}`}</span>
+                        /
+                        <span className="project-indicator-total">{`${projects.length < 10 ? '0' : ''}${projects.length}`}</span>
+                    </div>
                 </div>
             </div>
         </section>

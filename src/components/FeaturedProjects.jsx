@@ -5,7 +5,7 @@ import '../../assets/styles/FeaturedProjects.scss'
 
 
 const FeaturedProjects = props => {
-    const projects = useContext(ProjectsContext);
+    const { projects } = useContext(ProjectsContext);
     
     return (
         <div className={props.className}>

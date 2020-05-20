@@ -45,10 +45,13 @@
 }
 
 .info-container {
-    grid-column: 6 / 13;
+    grid-column: 6 / 11;
     grid-row: 1;
     position: relative;
     z-index: 0;
+}
+.project-info {
+    padding-right: 3.3em;
 }
 
 .info {
@@ -56,7 +59,6 @@
     left: 2.2em;
     top: 28%;
     display: inline-block;
-    max-width: 450px;
 
     & .hello {
         font-size: 1.5em;
@@ -73,7 +75,6 @@
     & span {
         display: inline-block;
         color: var(--text-secundary);
-        max-width: 450px;
         margin-bottom: 2.4em;
     }
 }
@@ -173,6 +174,10 @@
         margin-left: 0;
         grid-column: 5 / 12;
     }
+
+    .project-container {
+        grid-column: 6 / 12;
+    }
 }
 
 //Portrait Tablets
@@ -183,6 +188,11 @@
         grid-row: 2;
     }
 
+    .project-container {
+        grid-column: 2 / 10;
+        margin-top: -5%;
+    }
+
     .info {
         left: 0;
         top: 8%;
@@ -191,6 +201,10 @@
         & span {
             max-width: 100%;
         }
+    }
+
+    .project-info {
+        margin-left: 4.3em;
     }
     
     .contact-info {
@@ -204,6 +218,8 @@
 
         &.project {
             grid-column: 2 / 9;
+            margin: 0;
+            height: 95%;
         }
 
         &::after {
@@ -231,7 +247,8 @@
             display: inline-block;
         }
         &.lq.project {
-            width: 85%;
+            width: 75%;
+            margin-left: 4.3em;
         }
     }
 }
@@ -253,21 +270,13 @@
     }
 
     .home-pic {
-        width: 80%;
-
-        &.lq.project {
-            width: 100%;
-        }
+        width: 75%;
     }
 }
 
 @media screen and (max-width: 650px) and (min-width: 571px) and (orientation: portrait) {
     .home-pic {
         width: 90%;
-
-        &.lq.project {
-            width: 100%;
-        }
     }
 }
 
@@ -314,12 +323,17 @@
         grid-row: 2;
     }
 
+    .project-info {
+        margin-left: 3.3em;
+    }
+
     .img-container {
         grid-column: 1 / 5;
         grid-row: 1;
         margin-top: 0;
         
         &.project {
+            height: 90%;
             grid-column: 2 / 6;
         }
     }
@@ -334,7 +348,8 @@
             display: inline-block;
         }
         &.lq.project {
-            width: 80%;
+            width: 75%;
+            margin-left: 2.3em;
         }
     }
 }
@@ -342,40 +357,24 @@
 @media screen and (max-width: 480px) and (min-width: 421px) and (orientation: portrait) {
     .home-pic {
         width: 75%;
-
-        &.lq.project {
-            width: 85%;
-        }
     }
 }
 
 @media screen and (max-width: 480px) and (min-width: 421px) and (min-height: 860px) and (orientation: portrait) {
     .home-pic {
         width: 80%;
-
-        &.lq.project {
-            width: 90%;
-        }
     }
 }
 
 @media screen and (max-width: 420px) and (min-width: 381px) and (orientation: portrait) {
     .home-pic {
         width: 80%;
-
-        &.lq.project {
-            width: 95%;
-        }
     }
 }
 
 @media screen and (max-width: 420px)and (min-width: 381px) and (max-height: 650px) and (orientation: portrait) {
     .home-pic {
         width: 70%;
-
-        &.lq.project {
-            width: 85%;
-        }
     }
 }
 
@@ -393,19 +392,11 @@
     .info {
         top: -5%;
     }
-
-    .home-pic.lq.project {
-        width: 95%;
-    }
 }
 
 @media screen and (max-width: 380px) and (min-width: 341px) and (min-height: 680px) and (orientation: portrait) {
     .img-container{
         height: 100%;
-    }
-
-    .home-pic {
-        width: 80%;
     }
 
     .info {
@@ -424,8 +415,17 @@
         grid-column: 1 / 4;
     }
 
+    .project-info {
+        margin-top: -10%;
+    }
+
     .home-pic {
         width: 100%;
+
+        &.lq.project {
+            width: 70%;
+            margin-left: 3.3em;
+        }
     }
 }
 

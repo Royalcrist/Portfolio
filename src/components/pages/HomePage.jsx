@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Header from '../Header';
 import SocialMedia from '../SocialMedia';
 import Indicator from '../Indicator'
 import useIndicator from '../../useIndicator'
 import useScroll from '../../useScroll'
 import Button from '../Button';
+import { ProjectsContext } from '../contexts/ProjectsProvider';
 import '../../../assets/styles/pages/HomePage.scss'
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
@@ -34,16 +35,20 @@ const HomePage = () => {
         "url": "https://github.com/Royalcrist",
         "logo": GithubSVG
     };
+    const { index: projectIndex, projects } = useContext(ProjectsContext);
+    const [ color, setColor ] = useState('blue');
 
-    const color = value => {
-        if (value === 1) return 'blue';
-        else if (value === 2) return 'orange';
-        else return 'yellow';
-    }
+    useEffect( () => {
+        if ( scrollInfo.value === 2 ) setColor( projects[ projectIndex ].color );
+        else if ( scrollInfo.value === 3 ) setColor( 'yellow' );
+        else setColor( 'blue' )
+    }, [ scrollInfo.value, projectIndex] )
+
+    console.log( projectIndex )
 
     return (
         <>
-            < Header index={ scrollInfo.value } showLogo={ true } showNav={ true } color={color(scrollInfo.value)} socialMedia={{ github, linkedin }}/>
+            < Header index={ scrollInfo.value } showLogo={ true } showNav={ true } color={ color } socialMedia={{ github, linkedin }}/>
 
             <div className="media-container">
                 < SocialMedia media={ linkedin }/>

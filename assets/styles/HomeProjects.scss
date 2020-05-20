@@ -27,7 +27,6 @@
 
 .nav-next {
     @extend .nav-prev;
-    grid-column: 10;
     margin-left: -25%;
     margin-right: 0;
 
@@ -35,4 +34,86 @@
         transform: scaleX(-1);
     }
     
+}
+
+.project-indicator {
+    font-size: 1.7em;
+    color: var(--text-secundary);
+    font-weight: 400;
+    letter-spacing: .2em;
+    text-align: end;
+    margin-top: -2.2em;
+    margin-left: .2em;
+    
+    &-current {
+        font-weight: 600;
+        font-size: 1.35em;
+    }
+
+    &-total {
+        font-size: .7em;
+        font-weight: 400;
+    }
+}
+
+@media screen and (min-width: 1400px) and (min-height: 900px) and (orientation: landscape) {
+    .nav-prev {
+        top: 40%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 570px) and (orientation: landscape) {
+    .next-container {
+        grid-column: 12;
+    }
+}
+
+//Portrait Tablets
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .prev-container {
+        grid-column: 2 / 4;
+    }
+
+    .next-container {
+        grid-column: 9 / 11;
+    }
+
+    .nav-prev {
+        top: 100%;
+        left: -30%;
+    }
+
+    .nav-next {
+        left: 0;
+    }
+
+    .project-indicator {
+        font-size: 1.5em;
+    }
+}
+
+//Portrait Phones
+
+@media screen and (max-width: 570px) and (orientation: portrait) {
+    .prev-container {
+        grid-column: 2;
+    }
+
+    .next-container {
+        grid-column: 5;
+    }
+
+    .nav-prev {
+        top: 100%;
+        left: -60%;
+    }
+
+    .nav-next {
+        left: 60%;
+    }
+
+    .project-indicator {
+        font-size: 1.4em;
+    }
 }

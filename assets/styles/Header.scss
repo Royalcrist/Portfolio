@@ -48,18 +48,6 @@
     margin-top: 0.5em;
 }
 
-.dot-1{
-    background-image: var(--gradient-blue);
-}
-
-.dot-2{
-    background-image: var(--gradient-orange);
-}
-
-.dot-3{
-    background-image: var(--gradient-yellow);
-}
-
 .menu {
     position: absolute;
     top: 30px;
@@ -242,34 +230,12 @@
         border-radius: 2em;
     }
 
-    &.show .item.blue {
+    &.show .item.blue, &.show .item.orange, &.show .item.yellow, &.show .item.red {
         @include lang-item;
-        background-image: var(--gradient-blue);
     }
 
-    &.show .item.blue::before {
+    &.show .item.blue::before, &.show .item.orange::before, &.show .item.yellow::before, &.show .item.red::before {
         @include lang-item-shadow;
-        background-image: var(--gradient-blue);
-    }
-
-    &.show .item.orange {
-        @include lang-item;
-        background-image: var(--gradient-orange);
-    }
-
-    &.show .item.orange::before {
-        @include lang-item-shadow;
-        background-image: var(--gradient-orange);
-    }
-
-    &.show .item.yellow {
-        @include lang-item;
-        background-image: var(--gradient-yellow);
-    }
-
-    &.show .item.yellow::before {
-        @include lang-item-shadow;
-        background-image: var(--gradient-yellow);
     }
 
     &.show .item * .arrow {

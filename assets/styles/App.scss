@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 :root {
     // Text sizes
@@ -42,36 +42,12 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    font-weight: 500;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
-
-// /* width */
-// ::-webkit-scrollbar {
-//     display: initial;
-//     width: 16px;
-//     z-index: 6;
-// }
-
-// /* Track */
-// ::-webkit-scrollbar-track {
-//     background: #fff;
-//     z-index: 6;
-// }
-
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//     background: rgba($color: #000000, $alpha: .5);
-//     z-index: 10;
-// }
-
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//     background: #555;
-//     z-index: 6;
-// } 
 
 #app{
     overflow: hidden;
@@ -114,6 +90,38 @@ a, button {
     display: grid;
     grid-template-columns: repeat(14, 6.5%);
     grid-gap: 0 .7%;
+}
+
+.blue {
+    background-image: var(--gradient-blue);
+
+    &::before {
+        background-image: var(--gradient-blue);
+    }
+}
+
+.orange {
+    background-image: var(--gradient-orange);
+
+    &::before {
+        background-image: var(--gradient-orange);
+    }
+}
+
+.yellow {
+    background-image: var(--gradient-yellow);
+
+    &::before {
+        background-image: var(--gradient-yellow);
+    }
+}
+
+.red {
+    background-image: var(--gradient-red);
+
+    &::before {
+        background-image: var(--gradient-red);
+    }
 }
 
 @media screen and (min-width: 1400px) and (min-height: 900px) and (orientation: landscape) {
@@ -401,7 +409,7 @@ a, button {
     }
 
     body {
-        font-size: 14px;
+        font-size: 13px;
         letter-spacing: .5px;
     }
 }
@@ -449,22 +457,6 @@ a, button {
 
     body {
         font-size: 12px;
-        letter-spacing: .5px;
-    }
-}
-
-@media screen and (max-width: 380px) and (min-width: 341px) and (min-height: 650px) and (orientation: portrait) {
-    :root {
-        // Text sizes
-        --p-options-size: 12px;
-        --label-size: 20px;
-        --subtitle-size: 25px;
-        --title-size: 36px;
-        
-    }
-
-    body {
-        font-size: 14px;
         letter-spacing: .5px;
     }
 }
