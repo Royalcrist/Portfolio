@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ProjectFeatures from '../ProjectFeatures';
 import ProjectColors from '../ProjectColors';
 import useScroll from '../../useScroll';
@@ -6,6 +6,7 @@ import usePrev from '../../usePrev';
 import Indicator from '../Indicator';
 import FeaturedProjects from '../FeaturedProjects';
 import BackBtn from '../BackBtn';
+import { ProjectsContext } from '../contexts/ProjectsProvider';
 
 
 import '../../../assets/styles/pages/Cibus.scss';
@@ -25,6 +26,7 @@ import Feature2 from '../../../assets/static/feature2.png';
 import Feature3 from '../../../assets/static/feature3.png';
 import ProblemTop from '../../../assets/static/ProblemTop.svg';
 import ProblemBottom from '../../../assets/static/ProblemBottom.svg';
+import ProjectDescription from '../ProjectDescription';
 
 
 
@@ -146,6 +148,8 @@ const Cibus = () => {
     const scrollInfo = useScroll(0);
     const prev = usePrev(scrollInfo.value)
     const [ isVisible, setIsVisible ] = useState(true);
+    const { cases } = useContext(ProjectsContext);
+
 
     useEffect(() => {
         if (scrollInfo.value < prev){
@@ -170,46 +174,15 @@ const Cibus = () => {
                 </div>    
             </section>
             <section className="grid-column">
-                <span className="project-description">
-                Cibus is a Point of Sale System (POS) conceived to be secure, modern, and functional 
-                but at the same time easy to understand. It's based on the previous POS System of the 
-                company, keeping all the essential features that make it stand out.<br/><br/>
-
-                It specializes in restaurants, the company's main clients' sector, improving usability 
-                and experience, reducing the cost of tech support, and make the process of using it faster. <br/><br/>
-
-                It has a complete administrative space, where you can control things like the user's permissions, 
-                inventory stocks, the recipes, and much more. Also, The POS space is very straightforward, it has 
-                all things to keep the business modern and rolling like order, delivery, charge, reports, and support.
-                </span>
+                < ProjectDescription text={ cases[0].description } />
                 < ProjectFeatures features={ cibusFeatures } />
             </section>
             <section  className="grid-column project-problem" style={{backgroundImage: `url(${ProblemTop}), linear-gradient(#FF9438, #FF4400), url(${ProblemBottom})`}}>
                 <h1 className="project-title">Background</h1>
-                <span className="project-description">
-                Evolution POS is a Venezuela-Base software company that makes tech solutions for 
-                restaurants and stores with +10 years established in the market and +300 clients. <br/><br/>
-
-
-                They have a multidisciplinary team that shares the vision of changing the way that 
-                business works, making all their process faster, effective, and secure.<br/><br/>
-
-
-                I joined them as the only designer. I was responsible for developing the successor 
-                of their most popular POS System for restaurants ePOS.<br/><br/>
-                </span>
+                < ProjectDescription text={ cases[0].background } />
 
                 <h2 className="project-title">The Problem</h2>
-                <span className="project-description">
-                    The users needed customer support once every 3 days or so because the process of 
-                    acting was cumbersome and therefore it was very susceptible to errors.<br/><br/>
-
-                    The situation had to change as soon as possible, it was unstainable economically 
-                    and it was time-consuming for both the company and its costumers.<br/><br/>
-
-                    Also, the system hadn't received any interface updates since it was developed nine 
-                    years ago at that time.<br/><br/>
-                </span>
+                < ProjectDescription text={ cases[0].problem } />
 
                 <h2 className="project-title">Main objective and requirements</h2>
                 <span className="project-description">

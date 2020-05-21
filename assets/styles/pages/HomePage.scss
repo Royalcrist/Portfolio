@@ -190,7 +190,7 @@
 
     .project-container {
         grid-column: 2 / 10;
-        margin-top: -5%;
+        margin-top: 0;
     }
 
     .info {
@@ -219,7 +219,7 @@
         &.project {
             grid-column: 2 / 9;
             margin: 0;
-            height: 95%;
+            height: 90%;
         }
 
         &::after {
