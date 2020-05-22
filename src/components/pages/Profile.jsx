@@ -30,7 +30,7 @@ const Profile = ( props ) => {
 
     return (
         <React.Fragment>
-            < BackBtn />
+            < BackBtn url="/" />
             <section className="grid-column profile-page" onScroll={ scrollInfo.onScroll }>
 
                 <div className="profile-container">

@@ -163,7 +163,7 @@ const Cibus = () => {
     return (
         <>
         < Indicator modeTwo={ true } style={ !isVisible ? {bottom: '-7em'} : {}}/>
-        < BackBtn />
+        < BackBtn url="/#projects"/>
         <div className="project-page" onScroll={scrollInfo.onScroll}>
             <section className="preview grid-column">
                 <div className="preview-img-container" style={{backgroundImage: `url(${CibusPreview})`}}></div>
