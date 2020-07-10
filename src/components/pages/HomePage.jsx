@@ -6,7 +6,7 @@ import useIndicator from '../../useIndicator'
 import useScroll from '../../useScroll'
 import Button from '../Button';
 import { ProjectsContext } from '../contexts/ProjectsProvider';
-import '../../../assets/styles/pages/HomePage.scss'
+import '../../../assets/styles/pages/HomePage.scss';
 import EmailIcon from '../../EmailIcon';
 import PhoneIcon from '../../PhoneIcon';
 import ProfilePic from '../../../assets/static/ProfilePic.png';
