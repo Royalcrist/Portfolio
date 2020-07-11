@@ -22,15 +22,15 @@
         background-position: center top;
         border-radius: 0 0 0 20em;
     }
-    
+
     &-info {
         grid-column: 2 / 5;
-    
+
         & > h1 {
-            margin: 3em 0 .5em;
+            margin: 3em 0 0.5em;
             text-transform: uppercase;
         }
-    
+
         & > span {
             color: var(--text-secundary);
             letter-spacing: 2px;
@@ -60,7 +60,6 @@
     }
 }
 
-
 .project-subtitle {
     display: inline-block;
     margin: 0 0 1.5em;
@@ -88,46 +87,45 @@
     & > * {
         color: white;
     }
-    
+
     & span > * {
         color: white;
     }
 }
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
-    .preview {   
+    .preview {
         &-img-container {
             grid-column: 6 / 12;
             border-radius: 0 0 0 12em;
         }
-        
-        &-info {       
+
+        &-info {
             & > h1 {
-                margin: 2em 0 .5em;
+                margin: 2em 0 0.5em;
             }
         }
     }
-    
+
     .project-title {
         margin: 4em 0 1.2em;
         grid-column: 2 / 10;
-    
+
         &:first-child {
             margin-top: 4em;
         }
     }
-    
+
     .project-description {
         grid-column: 2 / 10;
         margin-bottom: 7em;
         color: var(--text-secundary);
-    
+
         &:last-child {
             margin-bottom: 10em;
         }
     }
-    
-    
+
     .project-subtitle {
         display: inline-block;
         margin: 3em 0 2em;
@@ -135,25 +133,25 @@
         color: var(--text-primary);
         text-transform: uppercase;
     }
-    
+
     .project-img {
         max-width: 100%;
         grid-column: 2 / 10;
         margin-bottom: 7em;
-    
+
         &-small {
             grid-column: 2 / 10;
             margin: 4em 0 14em;
         }
     }
-    
+
     .project-problem {
         background-size: 100% 5em, 100% calc(100% - 9em), 100% 5em;
-    
+
         & > * {
             color: white;
         }
-        
+
         & span > * {
             color: white;
         }
@@ -164,7 +162,6 @@
     }
 }
 
-
 @media screen and (max-width: 570px) and (orientation: portrait) {
     .preview {
         &-img-container {
@@ -173,13 +170,13 @@
             height: calc(var(--vh, 1vh) * 65);
             border-radius: 0 0 0 10em;
         }
-        
+
         &-info {
             grid-column: 2 / 4;
             margin-top: -5em;
-        
+
             & > h1 {
-                margin: 0 0 .5em;
+                margin: 0 0 0.5em;
             }
         }
     }
@@ -187,27 +184,26 @@
     .project-title {
         margin: 4em 0 1em;
         grid-column: 2 / 6;
-    
+
         &:first-child {
             margin-top: 4em;
         }
     }
-    
+
     .project-description {
         grid-column: 2 / 6;
         margin-bottom: 7em;
-    
+
         &:last-child {
             margin-bottom: 10em;
         }
     }
-    
-    
+
     .project-subtitle {
         margin: 3em 0 2em;
         grid-column: 2 / 6;
     }
-    
+
     .project-img {
         max-width: 100%;
         grid-column: 2 / 6;
@@ -218,5 +214,3 @@
         background-size: 100% 3em, 100% calc(100% - 6em), 100% 3em;
     }
 }
-
-

@@ -13,7 +13,7 @@
     font-size: var(--p-options-size);
     font-weight: 700;
     text-decoration: none;
-    letter-spacing: .18em;
+    letter-spacing: 0.18em;
     color: rgba(#000, 0.5);
     @include skmpsm-style;
 
@@ -21,15 +21,14 @@
         color: rgba(#000, 1);
     }
 
-
     &-icon {
         height: auto;
         width: 1em;
         max-width: 2em;
-        margin-right: .6em;
-        opacity: .5;
+        margin-right: 0.6em;
+        opacity: 0.5;
     }
-    
+
     &:hover &-icon {
         opacity: 1;
     }
@@ -57,7 +56,4 @@
             background-color: var(--background);
         }
     }
-
-
 }
-

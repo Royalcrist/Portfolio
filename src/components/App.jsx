@@ -7,27 +7,27 @@ import "../../assets/styles/App.scss";
 import { ProjectsProvider } from "./contexts/ProjectsProvider";
 
 const App = () => {
-  let vh = window.innerHeight * 0.01;
-
-  window.addEventListener("resize", () => {
-    // We execute the same script as before
     let vh = window.innerHeight * 0.01;
+
+    window.addEventListener("resize", () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-  });
 
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-  return (
-    <ProjectsProvider>
-      <BrowserRouter basename="/portfolio">
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/cibus" component={Cibus} />
-        </Switch>
-      </BrowserRouter>
-    </ProjectsProvider>
-  );
+    return (
+        <ProjectsProvider>
+            <BrowserRouter basename="/">
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/profile" component={Profile} />
+                    <Route path="/cibus" component={Cibus} />
+                </Switch>
+            </BrowserRouter>
+        </ProjectsProvider>
+    );
 };
 
 export default App;

@@ -9,7 +9,7 @@
 .color-container {
     background-color: var(--background);
     border-radius: 1.5em;
-    box-shadow: 0 8px 10px rgba($color: #000000, $alpha: .2);
+    box-shadow: 0 8px 10px rgba($color: #000000, $alpha: 0.2);
 }
 
 .color-text {
@@ -37,7 +37,7 @@
 }
 
 .color-description {
-    font-size: calc(var(--p-options-size) - .2em);
+    font-size: calc(var(--p-options-size) - 0.2em);
     color: var(--text-secundary);
     opacity: 0.5;
 }
@@ -47,7 +47,7 @@
         grid-column: 2 / 10;
         grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
     }
-    
+
     .color-preview {
         height: 5em;
     }

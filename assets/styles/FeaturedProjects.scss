@@ -12,7 +12,7 @@
     }
 
     h3 {
-        margin: .8em 0 .5em;
+        margin: 0.8em 0 0.5em;
     }
 
     p {
@@ -54,14 +54,13 @@
     .related-container {
         margin-top: 6em;
     }
-    
+
     .related {
         &-img {
             width: 80%;
         }
-    
     }
-    
+
     .more-projects {
         height: 105vh;
         height: calc(var(--vh, 1vh) * 105);
@@ -70,7 +69,7 @@
             margin-top: 85%;
         }
     }
-    
+
     .related-grid {
         grid-column: 2 / 10;
         margin-bottom: 0;
@@ -88,7 +87,7 @@
         grid-template-columns: 1fr;
         grid-gap: 10em;
     }
-    
+
     .more-projects {
         height: 95vh;
         height: calc(var(--vh, 1vh) * 85);
@@ -97,7 +96,7 @@
             margin-top: 85%;
         }
     }
-    
+
     .related-grid {
         grid-column: 2 / 6;
 

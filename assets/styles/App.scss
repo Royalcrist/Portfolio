@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
 
 :root {
     // Text sizes
@@ -7,24 +7,23 @@
     --label-size: 28px;
     --subtitle-size: 35px;
     --title-size: 50px;
-    
 
     // colors
     --text-primary: #000000;
-    --text-secundary: #5F5F5F;
+    --text-secundary: #5f5f5f;
     --secundary-option: #929292;
     --background: white;
-    --accent-blue: #009DE3;
-    --accent-orange: #FF9438;
-    --accent-yellow: #FFBB00;
-    --gradient-blue: linear-gradient(-135deg, #00FFCC, #1F77FF);
-    --gradient-orange: linear-gradient(-135deg, #FF9438, #FF4400);
-    --gradient-yellow: linear-gradient(-135deg, #FFBB00, #FF8800);
-    --gradient-red: linear-gradient(-135deg, #FF7167, #FF2810);
+    --accent-blue: #009de3;
+    --accent-orange: #ff9438;
+    --accent-yellow: #ffbb00;
+    --gradient-blue: linear-gradient(-135deg, #00ffcc, #1f77ff);
+    --gradient-orange: linear-gradient(-135deg, #ff9438, #ff4400);
+    --gradient-yellow: linear-gradient(-135deg, #ffbb00, #ff8800);
+    --gradient-red: linear-gradient(-135deg, #ff7167, #ff2810);
 }
 
 html {
-    background-color: #F7F7FA;
+    background-color: #f7f7fa;
     align-items: center;
     justify-content: center;
 }
@@ -33,7 +32,7 @@ body {
     margin: 0;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 18px;
     line-height: 1.6;
     letter-spacing: 1px;
@@ -49,7 +48,7 @@ body {
     display: none;
 }
 
-#app{
+#app {
     overflow: hidden;
     height: 100%;
     width: 100%;
@@ -57,7 +56,7 @@ body {
     min-width: 320px;
     max-height: 800px;
     position: relative;
-    box-shadow: 0 20px 20px rgba($color: #000000, $alpha: .2);
+    box-shadow: 0 20px 20px rgba($color: #000000, $alpha: 0.2);
 }
 
 h1 {
@@ -81,7 +80,8 @@ h3 {
     color: var(--text-primary);
 }
 
-a, button {
+a,
+button {
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
@@ -89,7 +89,7 @@ a, button {
 .grid-column {
     display: grid;
     grid-template-columns: repeat(14, 6.5%);
-    grid-gap: 0 .7%;
+    grid-gap: 0 0.7%;
 }
 
 .blue {
@@ -132,7 +132,6 @@ a, button {
         --label-size: 28px;
         --subtitle-size: 36px;
         --title-size: 54px;
-        
     }
 
     body {
@@ -152,7 +151,6 @@ a, button {
         --label-size: 24px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
@@ -168,7 +166,6 @@ a, button {
         --label-size: 20px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
@@ -184,14 +181,12 @@ a, button {
         --label-size: 18px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
         font-size: 16px;
     }
 }
-
 
 //Portrait Tablets
 
@@ -215,7 +210,6 @@ a, button {
         --label-size: 20px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
@@ -231,7 +225,6 @@ a, button {
         --label-size: 36px;
         --subtitle-size: 50px;
         --title-size: 72px;
-        
     }
 
     body {
@@ -247,7 +240,6 @@ a, button {
         --label-size: 24px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
@@ -263,7 +255,6 @@ a, button {
         --label-size: 28px;
         --subtitle-size: 42px;
         --title-size: 54px;
-        
     }
 
     body {
@@ -279,7 +270,6 @@ a, button {
         --label-size: 32px;
         --subtitle-size: 52px;
         --title-size: 72px;
-        
     }
 
     body {
@@ -295,12 +285,11 @@ a, button {
         --label-size: 28px;
         --subtitle-size: 42px;
         --title-size: 52px;
-        
     }
 
     body {
         font-size: 22px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -312,12 +301,11 @@ a, button {
         --label-size: 28px;
         --subtitle-size: 40px;
         --title-size: 48px;
-        
     }
 
     body {
         font-size: 20px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -339,12 +327,11 @@ a, button {
         --label-size: 20px;
         --subtitle-size: 36px;
         --title-size: 44px;
-        
     }
 
     body {
         font-size: 16px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -356,12 +343,11 @@ a, button {
         --label-size: 24px;
         --subtitle-size: 40px;
         --title-size: 50px;
-        
     }
 
     body {
         font-size: 18px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -373,12 +359,11 @@ a, button {
         --label-size: 20px;
         --subtitle-size: 24px;
         --title-size: 36px;
-        
     }
 
     body {
         font-size: 14px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -388,12 +373,11 @@ a, button {
         --p-options-size: 14px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
         font-size: 16px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -405,12 +389,11 @@ a, button {
         --label-size: 20px;
         --subtitle-size: 24px;
         --title-size: 36px;
-        
     }
 
     body {
         font-size: 13px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -420,27 +403,25 @@ a, button {
         --p-options-size: 11px;
         --subtitle-size: 24px;
         --title-size: 32px;
-        
     }
 
     body {
         font-size: 12px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
-@media screen and (max-width: 420px)and (min-width: 381px) and (min-height: 840px) and (orientation: portrait) {
+@media screen and (max-width: 420px) and (min-width: 381px) and (min-height: 840px) and (orientation: portrait) {
     :root {
         // Text sizes
         --p-options-size: 14px;
         --subtitle-size: 30px;
         --title-size: 40px;
-        
     }
 
     body {
         font-size: 16px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -452,12 +433,11 @@ a, button {
         --label-size: 20px;
         --subtitle-size: 24px;
         --title-size: 32px;
-        
     }
 
     body {
         font-size: 12px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -469,12 +449,11 @@ a, button {
         --label-size: 18px;
         --subtitle-size: 20px;
         --title-size: 26px;
-        
     }
 
     body {
         font-size: 10px;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -486,7 +465,6 @@ a, button {
         --p-options-size: 11px;
         --subtitle-size: 25px;
         --title-size: 36px;
-        
     }
 
     body {
@@ -500,7 +478,6 @@ a, button {
         --p-options-size: 10px;
         --subtitle-size: 25px;
         --title-size: 26px;
-        
     }
 
     body {

@@ -21,12 +21,12 @@
         right: 0;
         height: 100%;
         width: 100%;
-        opacity: .35;
-        transition: ease-in-out .3s;
+        opacity: 0.35;
+        transition: ease-in-out 0.3s;
     }
 
     & img:hover {
-        opacity: .8;
+        opacity: 0.8;
     }
 }
 
