@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../../assets/styles/App.scss';
 import { ProjectsProvider } from './contexts/ProjectsProvider';
-import Routes from './Routes';
+import HomePage from './pages/HomePage';
+import Profile from './pages/Profile';
+import Cibus from './pages/Cibus';
 
 const App = () => {
   let vh = window.innerHeight * 0.01;
@@ -17,7 +19,11 @@ const App = () => {
   return (
     <ProjectsProvider>
       <BrowserRouter basename="/">
-        <Routes />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/cibus" component={Cibus} />
+        </Switch>
       </BrowserRouter>
     </ProjectsProvider>
   );
