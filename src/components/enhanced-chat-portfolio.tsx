@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -235,7 +236,7 @@ function ScrollTriggeredMessage({
   index: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "200px" });
+  const isInView = useInView(ref, { once: true, margin: "400px" });
 
   return (
     <motion.div
@@ -248,19 +249,19 @@ function ScrollTriggeredMessage({
           : { opacity: 0, y: 50, scale: 0.9 }
       }
       transition={{
-        delay: index * 0.1,
-        duration: 0.4,
+        delay: index * 0.05,
+        duration: 0.2,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      className={`flex gap-4 ${
+      className={`flex gap-2 sm:gap-4 ${
         message.type === "user" ? "flex-row-reverse" : ""
       }`}
     >
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 hidden sm:block">
         <motion.div
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : { scale: 0 }}
-          transition={{ delay: index * 0.1 + 0.1, duration: 0.2 }}
+          transition={{ delay: index * 0.05 + 0.05, duration: 0.15 }}
           className={`w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 ${
             message.type === "user"
               ? "bg-white/10 text-white glow-on-hover"
@@ -284,8 +285,8 @@ function ScrollTriggeredMessage({
           animate={
             isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
           }
-          transition={{ delay: index * 0.1 + 0.05, duration: 0.3 }}
-          className={`inline-block p-4 rounded-2xl spotlight ${
+          transition={{ delay: index * 0.05 + 0.02, duration: 0.2 }}
+          className={`inline-block p-3 sm:p-4 rounded-xl sm:rounded-2xl spotlight ${
             message.type === "user"
               ? "bg-white/10 text-white ml-auto border border-white/20 glow-on-hover"
               : "backdrop-blur-xl bg-white/8 border border-white/12 text-gray-200"
@@ -311,7 +312,12 @@ function ScrollTriggeredMessage({
 export default function EnhancedChatPortfolio() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showAllExperiences, setShowAllExperiences] = useState(false);
+  const [showMobileHeader, setShowMobileHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const mobileHeaderRef = useRef<HTMLDivElement>(null);
+  const chatHeaderRef = useRef<HTMLElement>(null);
 
   // Use document scroll instead of ScrollArea
   const { scrollYProgress } = useScroll();
@@ -330,6 +336,55 @@ export default function EnhancedChatPortfolio() {
     });
     return unsubscribe;
   }, [scrollYProgress]);
+
+  // Handle mobile header visibility based on scroll direction
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past initial scroll
+        setShowMobileHeader(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setShowMobileHeader(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  // Calculate dynamic header height
+  useEffect(() => {
+    const calculateHeaderHeight = () => {
+      let totalHeight = 0;
+
+      if (mobileHeaderRef.current) {
+        totalHeight += mobileHeaderRef.current.offsetHeight;
+      }
+
+      if (chatHeaderRef.current) {
+        totalHeight += chatHeaderRef.current.offsetHeight;
+      }
+
+      setHeaderHeight(totalHeight);
+    };
+
+    // Calculate on mount and window resize
+    calculateHeaderHeight();
+    window.addEventListener("resize", calculateHeaderHeight);
+
+    // Recalculate after a short delay to ensure elements are rendered
+    const timer = setTimeout(calculateHeaderHeight, 100);
+
+    return () => {
+      window.removeEventListener("resize", calculateHeaderHeight);
+      clearTimeout(timer);
+    };
+  }, []);
 
   const chatMessages: ChatMessage[] = [
     {
@@ -351,9 +406,11 @@ export default function EnhancedChatPortfolio() {
       content: (
         <div className="flex flex-col sm:flex-row gap-6">
           <div className="relative flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40">
-            <img
+            <Image
               src="/IMG_8150.jpg"
               alt="Cristian Suarez"
+              width={160}
+              height={160}
               className="w-full h-full object-cover rounded-2xl border border-white/20 shadow-lg"
             />
             <div className="absolute bottom-2 right-2 bg-primary/90 text-primary-foreground text-xs px-2 py-1 rounded-full border border-white/20 shadow-lg">
@@ -497,9 +554,11 @@ export default function EnhancedChatPortfolio() {
                 <div className="space-y-0">
                   {/* Featured project with preview */}
                   <div className="relative h-32 w-full overflow-hidden">
-                    <img
+                    <Image
                       src="/hira-preview.png"
                       alt={`${project.name} preview`}
+                      width={400}
+                      height={200}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -677,7 +736,7 @@ export default function EnhancedChatPortfolio() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-background flex relative overflow-hidden"
+      className="min-h-screen bg-background flex flex-col lg:flex-row relative overflow-hidden"
     >
       {/* Enhanced Lighting Effects with Parallax */}
       <motion.div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -689,7 +748,33 @@ export default function EnhancedChatPortfolio() {
         <div className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-secondary/5 rounded-full blur-2xl" />
       </motion.div>
 
-      {/* Sidebar */}
+      {/* Mobile Navigation */}
+      <motion.div
+        ref={mobileHeaderRef}
+        initial={{ y: -100 }}
+        animate={{ y: showMobileHeader ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="lg:hidden fixed top-0 left-0 right-0 bg-card/30 backdrop-blur-md border-b border-white/10 p-4 z-30"
+      >
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-bold text-gradient">Cristian</h2>
+          <div className="flex gap-2 overflow-x-auto">
+            {sidebarItems.slice(0, 4).map((item) => (
+              <Button
+                key={item.id}
+                variant="ghost"
+                size="sm"
+                className="btn-glass hover:bg-white/10 flex-shrink-0"
+                onClick={() => scrollToSection(item.id)}
+              >
+                {item.icon}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Desktop Sidebar */}
       <motion.aside
         initial={{ x: -300 }}
         animate={{ x: 0 }}
@@ -738,10 +823,14 @@ export default function EnhancedChatPortfolio() {
       <main className="flex-1 flex flex-col relative z-10 lg:ml-80">
         {/* Header */}
         <motion.header
+          ref={chatHeaderRef}
           initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="glass-card border-b border-white/10 p-4"
+          animate={{
+            y: showMobileHeader ? 0 : -100,
+            opacity: showMobileHeader ? 1 : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="glass-card border-b border-white/10 p-4 fixed top-16 lg:top-0 left-0 lg:left-80 right-0 z-20"
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -760,18 +849,24 @@ export default function EnhancedChatPortfolio() {
           </div>
         </motion.header>
 
+        {/* Header Spacer - dynamically matches header heights */}
+        <div
+          className="flex-shrink-0"
+          style={{ height: `${headerHeight}px` }}
+        ></div>
+
         {/* Chat Messages */}
-        <div className="flex-1 p-6 overflow-y-auto custom-scrollbar relative">
+        <div className="flex-1 p-3 sm:p-6 pt-8 lg:pt-6 overflow-y-auto custom-scrollbar relative">
           {/* Dynamic scroll-based light behind messages */}
           <motion.div
-            className="absolute w-96 h-96 bg-primary/8 rounded-full blur-3xl pointer-events-none z-0"
+            className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-primary/8 rounded-full blur-3xl pointer-events-none z-0"
             style={{
               left: lightX,
               top: useTransform(scrollYProgress, [0, 1], ["0%", "80%"]),
             }}
           />
 
-          <motion.div className="max-w-4xl mx-auto space-y-8 pb-8 relative z-10">
+          <motion.div className="max-w-4xl mx-auto space-y-4 sm:space-y-8 pb-20 sm:pb-8 relative z-10">
             {chatMessages.map((message, index) => (
               <ScrollTriggeredMessage
                 key={message.id}
@@ -795,16 +890,16 @@ export default function EnhancedChatPortfolio() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
+        className="fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-50"
       >
-        <div className="glass-card px-4 py-3 flex items-center gap-3 glow-on-hover rounded-2xl">
+        <div className="glass-card px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 sm:gap-3 glow-on-hover rounded-2xl text-sm sm:text-base">
           <motion.div
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="flex items-center gap-2"
           >
             <ChevronDown className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground whitespace-nowrap">
+            <span className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap">
               {scrollProgress < 0.95
                 ? "Scroll to explore"
                 : "Portfolio complete"}
