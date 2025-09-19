@@ -487,48 +487,98 @@ export default function EnhancedChatPortfolio() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`p-6 transition-all duration-300 spotlight glow-on-hover ${
+              className={`transition-all duration-300 spotlight glow-on-hover ${
                 project.highlight
-                  ? "glass-card border-white/20 bg-gradient-to-r from-white/10 to-white/5"
-                  : "glass-card"
+                  ? "overflow-hidden glass-card border-white/20 bg-gradient-to-r from-white/10 to-white/5"
+                  : "p-6 glass-card"
               }`}
             >
-              <div className="space-y-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h4 className="font-semibold text-lg flex items-center gap-2">
-                      {project.name}
-                      {project.highlight && (
-                        <Badge className="text-xs">Featured</Badge>
-                      )}
-                    </h4>
+              {project.highlight ? (
+                <div className="space-y-0">
+                  {/* Featured project with preview */}
+                  <div className="relative h-32 w-full overflow-hidden">
+                    <img
+                      src="/hira-preview.png"
+                      alt={`${project.name} preview`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                    {/* Project header overlay */}
+                    <div className="absolute bottom-2 left-3 right-3 flex items-end justify-between">
+                      <div>
+                        <h4 className="font-semibold text-white text-lg flex items-center gap-2">
+                          {project.name}
+                          <Badge className="text-xs">Featured</Badge>
+                        </h4>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="bg-white/10 hover:bg-white/20 text-white border-white/20"
+                        asChild
+                      >
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="btn-glass glow-on-hover"
-                    asChild
-                  >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+
+                  {/* Project content */}
+                  <div className="p-4 space-y-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                /* Regular projects without preview */
+                <div className="space-y-3">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h4 className="font-semibold text-lg flex items-center gap-2">
+                        {project.name}
+                      </h4>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="btn-glass glow-on-hover"
+                      asChild
                     >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </Button>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <Badge key={i} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+              )}
             </Card>
           ))}
         </div>
